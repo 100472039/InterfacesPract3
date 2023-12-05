@@ -16,6 +16,10 @@
 }
  .navbar img{
   margin-top: 10px;
+  float: left;
+  width: 300px;
+  height: 60px; 
+  object-fit: cover;
 }
  .navbar a{
   text-shadow: 0px 4px 4px #00000040;
@@ -656,14 +660,7 @@
 
 
 
-.desktop .VIPS {
-  position: absolute;
-  width: 298px;
-  height: 61px;
-  top: 0;
-  left: 44px;
-  object-fit: cover;
-}
+
 .footer {
   position: absolute;
   width: 100%;
