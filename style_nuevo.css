@@ -75,7 +75,8 @@ p{
     margin-left: 150px;
     margin-right: 150px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }
 .pagina1 img{
     border-radius: 50px;
@@ -88,9 +89,7 @@ p{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
-    flex-basis: 0;
-    margin:25px;
+    min-width: 400px;
 }
 
 .boton {
@@ -144,12 +143,44 @@ p{
     /* height: auto; */
 }
 .plato1{
-    background-color: aqua;
     margin-left: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-right: 35px;
 }
 .plato2{
-    background-color: red;
     margin-right: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-left: 35px;
+}
+.plato3{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+@media screen and (max-width: 600px){
+    .pagina1{
+        flex-wrap: wrap;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .reservar, .pedir {
+        flex-grow: 0;
+        margin:10px;
+    }
+}
+@media screen and (max-width: 768px){
+    .pagina1{
+        flex-wrap: wrap;
+        margin-left: 40px;
+        margin-right: 40px;
+        background-color: #dd1b2d;
+    }
+    .reservar, .pedir {
+        margin:10px;
+        min-width: 100px;
+    }
 }
 /* .novedades .platos div {
     flex: 1;
