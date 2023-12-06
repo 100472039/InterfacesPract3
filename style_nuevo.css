@@ -387,6 +387,40 @@ p{
 .btn-right {
     right: 10px;
 }
+.club{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.app{
+    display: flex;
+    width: 100%;
+    margin-right: 35px;
+    object-fit: cover;
+}
+.descargar{
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+.movil{
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+}
+.movil img{
+    width: 40%;
+    object-fit: cover;
+}
+
 
 @media screen and (max-width: 600px){
     .pagina1{
@@ -435,6 +469,9 @@ p{
     .text-container{
         display: block;
     }
+    .app{
+        flex-wrap: wrap;
+    }
 
 }
 @media screen and (max-width: 768px){
@@ -472,42 +509,12 @@ p{
     .grid-container {
         margin:10px;
     }
-    
+    .footer{
+        font-size: 15px;
+    }
 
-/*     .platos{
-        flex-wrap: wrap;
-    } */
 }
-/* .novedades .platos div {
-    flex: 1;
-    text-align: center;
-} */
-/* .plato1{
-    background-color: #dd1b2d;
-    object-fit: cover;
-    justify-content: center; 
-    flex-grow: 1;
-    flex-basis: 0;
-}
-.plato2{
-    background-color: #8cdd1b;
-    flex-grow: 1;
-    flex-basis: 0;
-} */
-/* .plato2 img{
-    object-fit: cover;
-}
- */
-/* .plato3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    flex-basis: 0;
-    width: 100%;
-}
- */
+
 .footer {
     position: absolute;
     width: 100%;
