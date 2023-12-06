@@ -13,11 +13,29 @@
   </head>
 
   <body>
+    <header>
+      <div class="container">
+          <label for="btn-menu" class="icono-menu"> ☰</label>
+      </div>
+    </header>
+    <input type="checkbox" id="btn-menu">
+    <div class ="container-menu">
+        <div class = "cont-menu">
+            <nav>
+                <a href="#promociones" onclick="cerrarMenu()">Promociones</a>
+                <a href="#link2" onclick="cerrarMenu()">Reservar</a>
+                <a href="#link3" onclick="cerrarMenu()">Pedido a domicilio</a>
+            </nav>
+            <label for="btn-menu" class="icon-equis">✖️</label>
+        </div>
+    </div>
     <div class="navbar">
       <img src="img/VIPS-1.png">
-      <a href=#promociones>Promociones</a>
-      <a href=reserva.html >Reservar</a>
-      <a href=pedido.html>Pedido a domicilio</a>
+      <div class="navbar-inner">
+        <a href=#promociones>Promociones</a>
+        <a href=reserva.html >Reservar</a>
+        <a href=pedido.html>Pedido a domicilio</a>
+      </div>
     </div>
 
     <section>
@@ -48,12 +66,14 @@
     <section class="novedades">
       <h2>NUESTRAS NOVEDADES</h2>
       <div class="platos">
+        <!-- <div class="platos-container"> -->
         <div class="plato1">
           <img src="img/plato2222.png" alt="foto5">
         </div>
         <div class="plato2">
           <img src="img/plato1.png" alt="foto4">
         </div>
+        <!-- </div> -->
         <div class="plato3">
           <img src="img/plato3.png" alt="foto6">
         </div>
