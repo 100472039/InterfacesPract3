@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reserva.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200&family=Hahmlet:wght@300&family=Orbitron:wght@500;600&family=Purple+Purse&family=Secular+One&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style_nuevo.css"> -->
     <!-- <link rel="stylesheet" href="/InterfacesPract3/style_nuevo.css"> -->
     <title>Reserva</title>
 </head>
 <body>
-    <h1>¡Estás haciendo tu reserva!</h1>
+    <header>
+        <div class="container">
+            <label for="btn-menu" class="icono-menu"> ☰</label>
+        </div>
+    </header>
+    <input type="checkbox" id="btn-menu">
+    <div class ="container-menu">
+        <div class = "cont-menu">
+            <nav>
+                <a href="#promociones" onclick="cerrarMenu()">Promociones</a>
+                <a href="#link2" onclick="cerrarMenu()">Reservar</a>
+                <a href="#link3" onclick="cerrarMenu()">Pedido a domicilio</a>
+                <a href="login.html" onclick="cerrarMenu()">Iniciar sesión</a>
+                <a href="register.html" onclick="cerrarMenu()">Registro de usuarios</a>
+            </nav>
+            <label for="btn-menu" class="icon-equis">✖️</label>
+        </div>
+    </div>
+    <div class="navbar">
+        <img src="img/VIPS-1.png">
+        <div class="navbar-inner">
+            <a href="login.html">Iniciar sesión</a>
+            <a href="register.html">Registro de usuarios</a>
+            <a href=#promociones>Promociones</a>
+            <a href=reserva.html >Reservar</a>
+            <a href=pedido.html>Pedido a domicilio</a>     
+        </div>
+    </div>
+
+    <section>
+        <h1>¡Estás haciendo tu reserva!<h1>
+    </section> 
+    
     <div class="pagina">
         <div class="col_t1">
             <p>¿Dónde quieres reservar?</p>
@@ -21,10 +57,10 @@
             <input type="text" class="entrada" id="username1"  placeholder="HH:MM">
         </div>
         <div class="col_t2">
-            <img class="imagen" src="../InterfacesPract3/img/video.png">
+           <!--  <img class="imagen" src="../InterfacesPract3/img/video.png"> -->
         </div>
     </div>
-    <h1>Información de contacto</h1>
+    <h2>Información de contacto</h2>
     <div class="contacto">
         <ul>
             <li>

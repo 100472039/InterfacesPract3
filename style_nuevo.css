@@ -617,7 +617,7 @@ p{
     margin-right: 30px;
 }
 
-.entrada {
+/* .entrada {
     display: block;
     width: 50%;
     padding: 0.75rem;
@@ -631,4 +631,4 @@ p{
 
 .entrada:focus {
     border-color: var(--color-gris);
-}
+} */
