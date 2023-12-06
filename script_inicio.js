@@ -2,7 +2,21 @@ function cerrarMenu() {
     var btnMenu = document.getElementById('btn-menu');
     btnMenu.checked = false;
 }
-
+function EnviarComen(){
+    var comentario = document.getElementById("comentarios").value;
+    
+    // Comprueba si el comentario está vacío
+    if (comentario.trim() === "") {
+        alert("El comentario no puede estar vacío.");
+        return;
+    }
+    var comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    comentarios.push(comentario);
+    localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    
+    document.getElementById("comentarios").value = "";
+    alert("Se ha enviado su comentario.");
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     const btnLeft = document.querySelector(".btn-left"),
           btnRight = document.querySelector(".btn-right"),

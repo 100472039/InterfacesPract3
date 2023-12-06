@@ -198,7 +198,10 @@ p{
     align-items: center;
     margin-top: 50px;
 }
-
+.pagina2 img{
+    object-fit: cover;
+    width: 60%;
+}
 .novedades{
     margin-top: 50px;
     width: 100%;
@@ -404,10 +407,16 @@ p{
 .descargar{
     width: 100%;
     display: flex;
-    object-fit: cover;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.descargar img{
+    width: 30%;
     object-fit: cover;
+    margin: 10px;
+
 }
 .movil{
     width: 100%;
@@ -415,12 +424,36 @@ p{
     object-fit: cover;
     align-items: center;
     justify-content: center;
+    
 }
 .movil img{
     width: 40%;
     object-fit: cover;
 }
+#comentarios{
+    height: 100px;
+    width: 300px;
+    resize: none;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border:none;
+    margin-right: 10px;
+}
+.boton-comentario{
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: var(--color-blanco);
+    border-radius: 5px;
+}
+.boton-comentario:hover {
+    color: var(--color-rojo);
+    border: 2px solid var(--color-rojo);
+    background: var(--color-blanco-sucio);
+}
 
+.boton-comentario:active {
+    transform: scale(0.9);
+}
 
 @media screen and (max-width: 600px){
     .pagina1{
