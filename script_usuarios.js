@@ -1,12 +1,22 @@
 // Lista de usuarios
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-function validarFormulario() {
-    const dni = document.getElementById('dni').value;
-    const nombre = document.getElementById('nombre').value;
-    const contraseña = document.getElementById('contrasena').value;
-    const conf_contraseña = document.getElementById('conf_contrasena').value;
-    const email = document.getElementById('email').value;
+function buscarUsuario(email) {
+    // Buscar usuario por email
+    const usuario = usuarios.find((usuario) => usuario.email == email);
+    return usuario;
+}
+
+function validarRegistro() {
+    if (window.location.pathname != "/register.html"){
+        console.log(window.location.pathname);
+        return false;
+    }
+    const dni = document.getElementById('dni_r').value;
+    const nombre = document.getElementById('nombre_r').value;
+    const contraseña = document.getElementById('contrasena_r').value;
+    const conf_contraseña = document.getElementById('conf_contrasena_r').value;
+    const email = document.getElementById('email_r').value;
 
     // Validar DNI
     const dniRegex = /^[0-9]{8}[A-Za-z]$/;
@@ -37,6 +47,10 @@ function validarFormulario() {
         alert('Formato de correo electrónico inválido');
         return false;
     }
+    if (buscarUsuario(email)) {
+        alert('Ya existe un usuario con ese correo electrónico');
+        return false;
+    }
 
     // Crear objeto de usuario
     const usuario = {
@@ -56,17 +70,31 @@ function validarFormulario() {
     alert('Formulario enviado correctamente');
 }
 
-function buscarUsuario(dni) {
+function validarLogin(){
+    if (window.location.pathname != "/login.html"){
+        return false;
+    }
+    const email = document.getElementById('email_l').value;
+    const contraseña = document.getElementById('contrasena_l').value;
+
     // Buscar usuario por nombre
-    const usuario = usuarios.find(usuario => usuario.dni === dni);
+    const usuario = buscarUsuario(email);
     
     // Si no se encuentra el usuario, mostrar una alerta
     if (!usuario) {
-        alert('No existe un usuario con ese nombre');
+        alert('Usuario no encontrado');
+        return false;
     }
     
-    return usuario;
+    // Validar contraseña
+    if (usuario.contraseña != contraseña) {
+        alert('Contraseña incorrecta');
+        return false;
+    }
+
+    // Guardar usuario en LocalStorage
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
+    alert('Login correcto');
+    return true;
 }
-
-
-console.log(buscarUsuario('51731545z'));
