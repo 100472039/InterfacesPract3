@@ -12,19 +12,18 @@
 </head>
 <body>
     <h2 class="titulo">Registro de Usuarios</h2>
-    <form id="registro" name="registro" method="get">
+    <form class="formulario" name="registro" method="get">
         <label for="dni">DNI:</label>
-            <input type="text" id="dni" name="dni" placeholder="Introduce el DNI."><br>
+            <input type="text" id="dni_r" name="dni" placeholder="Introduce el DNI."><br>
         <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Introduce el Nombre."><br>
-        <label for="contrasena">Contraseña:</label>
-            <input type="text" id="contrasena" name="cpntrasena" placeholder="Introduce la Contraseña."><br>
-            <input type="text" id="conf_contrasena" name="conf_contrasena" placeholder="Introduce la Contraseña de nuevo."><br>
+            <input type="text" id="nombre_r" name="nombre" placeholder="Introduce el Nombre."><br>
         <label for="email">Correo electrónico:</label>
-            <input type="text" id="email" name="email" placeholder="Introduce el Correo electrónico."><br>
-        <input type="button" value="Enviar" style="cursor: pointer;" onclick="validarFormulario()">
-        <input type="reset" value="Limpiar" style="cursor: pointer;">
-        <a href="index.html">
+            <input type="text" id="email_r" name="email" placeholder="Introduce el Correo electrónico."><br>
+        <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena_r" name="cpntrasena" placeholder="Introduce la Contraseña."><br>
+            <input type="password" id="conf_contrasena_r" name="conf_contrasena" placeholder="Introduce la Contraseña de nuevo."><br>
+        <input type="button" value="Enviar" style="cursor: pointer;" onclick="validarRegistro()">
+        <a href="desktop.html">
             <input type="button" value="Cancelar" style="cursor: pointer;">
         </a>
     </form>
