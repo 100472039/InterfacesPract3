@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200&family=Hahmlet:wght@300&family=Orbitron:wght@500;600&family=Purple+Purse&display=swap" rel="stylesheet">
+    <script src="script_inicio.js"></script>
   </head>
 
   <body>
@@ -65,21 +66,69 @@
 
     <section class="novedades">
       <h2>NUESTRAS NOVEDADES</h2>
+      <p>¡No te pierdas nuestros platos atípicos!</p>
       <div class="platos">
-        <!-- <div class="platos-container"> -->
         <div class="plato1">
           <img src="img/plato2222.png" alt="foto5">
+          <div class="overlay">
+            <p>Carbonara de Soria</p>
+            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+          </div>
         </div>
         <div class="plato2">
           <img src="img/plato1.png" alt="foto4">
+          <div class="overlay">
+            <p>VIPS Wellington</p>
+            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+          </div>
         </div>
-        <!-- </div> -->
         <div class="plato3">
           <img src="img/plato3.png" alt="foto6">
+          <div class="overlay">
+            <p>Albóndigas ibéricas</p>
+            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+          </div>
         </div>
       </div>
-
     </section>
+
+    <section class="locales">
+      <h2>NUESTROS LOCALES</h2>
+      <div class="grid-container">
+        <div class="item1">
+          <img src="img/collage1.png" alt="foto4">
+        </div>
+        <div class="item2">
+          <p>Tenemos locales en muchas ciudades de España. ¡Seguro que hay uno cerca de ti!</p>
+        </div>      
+        <div class="item3">
+          <img src="img/collage2.png" alt="foto4">
+        </div>
+        <div class="item4">
+          <img src="img/collage3.png" alt="foto4">
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Tenemos locales en muchas ciudades de España. ¡Seguro que hay uno cerca de ti!</p>
+      </div>
+      <div class="container-carousel">
+        <div class="carruseles" id="slider">
+            <div class="slider-section">
+                <img id= "img8" src="img/collage1.png" alt="collage1">
+            </div>
+            <div class="slider-section">
+                <img id = "img9" src="img/collage2.png" alt="collage2">
+            </div>
+            <div class="slider-section">
+                <img id = "img10" src="img/collage3.png" alt="collage1">
+            </div>
+        </div>
+        <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+        <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
+    </div>
+    </section>
+
+    
     <footer class="footer">
 
         <div>Síguenos</div>
