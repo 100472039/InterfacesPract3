@@ -9,9 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200&family=Hahmlet:wght@300&family=Orbitron:wght@500;600&family=Purple+Purse&family=Secular+One&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style_nuevo.css"> -->
     <!-- <link rel="stylesheet" href="/InterfacesPract3/style_nuevo.css"> -->
+    <!-- <script src="script_inicio.js"></script>
+    <script src="script.js"></script> -->
     <title>Reserva</title>
 </head>
 <body>
+    <script src="script_inicio.js"></script>
+    <!-- <script src="script.js"></script> -->
     <header>
         <div class="container">
             <label for="btn-menu" class="icono-menu"> ☰</label>
@@ -22,7 +26,7 @@
         <div class = "cont-menu">
             <nav>
                 <a href="#promociones" onclick="cerrarMenu()">Promociones</a>
-                <a href="#link2" onclick="cerrarMenu()">Reservar</a>
+                <a href=inicio.html onclick="cerrarMenu()">Inicio</a>
                 <a href="#link3" onclick="cerrarMenu()">Pedido a domicilio</a>
                 <a href="login.html" onclick="cerrarMenu()">Iniciar sesión</a>
                 <a href="register.html" onclick="cerrarMenu()">Registro de usuarios</a>
@@ -52,7 +56,27 @@
             <p>¿Cuántas personas sois?</p>
             <input type="text" class="entrada" id="username1"  placeholder="¿Cuántas personas sois?">
             <p>¿Qué día quieres reservar?</p>
-            <input type="text" class="entrada" id="username1"  placeholder="DD/MM/AAAA">
+            <div class="calendar">
+                <div class="calendar__info">
+                    <div class="calendar__prev" id="prev-month">&#9664;</div>
+                    <div class="calendar__month" id="month"></div>
+                    <div class="calendar__year" id="year"></div>
+                    <div class="calendar__next" id="next-month">&#9654;</div>
+                </div>
+            
+                <div class="calendar__week">
+                    <div class="calendar__day calendar__item">L</div>
+                    <div class="calendar__day calendar__item">M</div>
+                    <div class="calendar__day calendar__item">X</div>
+                    <div class="calendar__day calendar__item">J</div>
+                    <div class="calendar__day calendar__item">V</div>
+                    <div class="calendar__day calendar__item">S</div>
+                    <div class="calendar__day calendar__item">D</div>
+                </div>
+            
+                <div class="calendar__dates" id="dates"></div>
+            </div>
+            <!-- <input type="text" class="entrada" id="username1"  placeholder="DD/MM/AAAA"> -->
             <p>¿A qué hora quieres venir?</p>
             <input type="text" class="entrada" id="username1"  placeholder="HH:MM">
         </div>

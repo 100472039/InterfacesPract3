@@ -290,3 +290,60 @@ p{
         flex-wrap: wrap;
     }
 }
+
+.calendar {
+    background: var(--color-blanco);
+    width: 80%;
+    max-width: 600px;
+}
+
+.calendar__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--color-gris);
+    font-weight: bold;
+    text-transform: uppercase;
+ }
+.calendar__prev, .calendar__next {
+    color: var(--color-rojo);
+    cursor: pointer;
+}
+
+.calendar__prev {
+    margin-right: auto; 
+}
+
+.calendar__next {
+    margin-left: auto; 
+}
+
+.calendar__week, .calendar__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px; 
+}
+
+.calendar__month, .calendar__year {
+    padding: 5px; 
+    font-size: 20px;
+}
+
+.calendar__item {
+    text-align: center;
+    line-height: 2; 
+}
+.calendar__today {
+    background: lightcoral;
+    color: white;
+    width: 50%;
+    border-radius: 50%;
+    margin: auto; 
+}
+
+.calendar__last-days {
+    opacity: .3; 
+}
