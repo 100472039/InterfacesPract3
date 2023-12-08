@@ -585,10 +585,9 @@ p{
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 115px;
-    top: 5549px;
+    bottom:0;
     left:0;
     background-color: var(--color-rojo);
     font-family: "Hahmlet-Bold", Helvetica;
