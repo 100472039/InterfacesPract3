@@ -617,39 +617,39 @@ p{
     margin-right: 30px;
 }
 #comentariosGuardados {
-    border: 1px solid; /* color del borde */
-    padding: 20px; /* espacio interior */
-    margin: 20px 0; /* espacio exterior */
-    border-radius: 10px; /* bordes redondeados */
-    background-color: #F9F9F9; /* color de fondo */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra */
+    border: 1px solid;
+    padding: 20px;
+    margin: 20px 0; 
+    border-radius: 10px;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
     width: 1500px;
 }
 
 #comentariosGuardados p {
-    border: 1px solid; /* color del borde */
-    padding: 15px; /* espacio interior */
-    margin: 10px 0; /* espacio exterior */
-    border-radius: 5px; /* bordes redondeados */
-    background-color: #F1F1F1; /* color de fondo */
-    color: #333; /* color del texto */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra */
-    transition: all 0.3s ease; /* transición suave al pasar el ratón */
+    border: 1px solid; 
+    padding: 15px; 
+    margin: 10px 0; 
+    border-radius: 5px; 
+    background-color: #F1F1F1;
+    color: #333; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
+    transition: all 0.3s ease;
 }
 
 #comentariosGuardados p:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* sombra al pasar el ratón */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 .icono-usuario {
-    width: 30px; /* ajusta el tamaño como prefieras */
-    height: 30px; /* ajusta el tamaño como prefieras */
-    margin-right: 10px; /* espacio a la derecha del icono */
-    vertical-align: middle; /* alinea el icono con el texto */
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; 
+    vertical-align: middle; 
 }
 .fecha-comentario {
-    font-size: 0.8em; /* tamaño de letra más pequeño */
-    color: #888; /* color de letra gris */
-    float: right; /* alinear a la derecha */
+    font-size: 0.8em; 
+    color: #888; 
+    float: right;
 }
 
 
