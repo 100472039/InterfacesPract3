@@ -585,6 +585,7 @@ p{
 }
 
 .footer {
+    display: none;
     position: fixed;
     width: 100%;
     bottom:0;
@@ -615,6 +616,42 @@ p{
     font-size: 25px;
     margin-right: 30px;
 }
+#comentariosGuardados {
+    border: 1px solid; /* color del borde */
+    padding: 20px; /* espacio interior */
+    margin: 20px 0; /* espacio exterior */
+    border-radius: 10px; /* bordes redondeados */
+    background-color: #F9F9F9; /* color de fondo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra */
+    width: 1500px;
+}
+
+#comentariosGuardados p {
+    border: 1px solid; /* color del borde */
+    padding: 15px; /* espacio interior */
+    margin: 10px 0; /* espacio exterior */
+    border-radius: 5px; /* bordes redondeados */
+    background-color: #F1F1F1; /* color de fondo */
+    color: #333; /* color del texto */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra */
+    transition: all 0.3s ease; /* transición suave al pasar el ratón */
+}
+
+#comentariosGuardados p:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* sombra al pasar el ratón */
+}
+.icono-usuario {
+    width: 30px; /* ajusta el tamaño como prefieras */
+    height: 30px; /* ajusta el tamaño como prefieras */
+    margin-right: 10px; /* espacio a la derecha del icono */
+    vertical-align: middle; /* alinea el icono con el texto */
+}
+.fecha-comentario {
+    font-size: 0.8em; /* tamaño de letra más pequeño */
+    color: #888; /* color de letra gris */
+    float: right; /* alinear a la derecha */
+}
+
 
 /* .entrada {
     display: block;

@@ -7,12 +7,28 @@ function EnviarComen(){
         return;
     }
     var comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
-    comentarios.push(comentario);
+    var fecha = new Date();
+    var fechaFormateada = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
+    comentarios.push({texto: comentario, fecha: fechaFormateada});
     localStorage.setItem("comentarios", JSON.stringify(comentarios));
     
     document.getElementById("comentarios").value = "";
     alert("Se ha enviado su comentario.");
+
+    mostrarComentarios();
 }
+
+function mostrarComentarios() {
+    var comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    var contenedorComentarios = document.getElementById("comentariosGuardados");
+    contenedorComentarios.innerHTML = '';
+    for (var i = 0; i < comentarios.length; i++) {
+        contenedorComentarios.innerHTML += '<p><img src="img/perfil.png" class="icono-usuario">' + comentarios[i].texto + '<span class="fecha-comentario">' + comentarios[i].fecha + '</span></p>';
+    }
+}
+
+window.onload = mostrarComentarios;
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const btnLeft = document.querySelector(".btn-left"),
           btnRight = document.querySelector(".btn-right"),

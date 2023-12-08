@@ -68,6 +68,8 @@ function validarRegistro() {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
     alert('Formulario enviado correctamente');
+    window.location = 'inicio.html';
+    return true;
 }
 
 function validarLogin(){
@@ -96,5 +98,6 @@ function validarLogin(){
     localStorage.setItem('usuario', JSON.stringify(usuario));
 
     alert('Login correcto');
+    window.location = 'inicio.html';
     return true;
 }
