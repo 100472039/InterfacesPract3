@@ -16,7 +16,7 @@ body{
     height: 62px;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 }
 .navbar img{
     margin-top: 10px;
@@ -132,9 +132,10 @@ p{
     padding: 10px;
     display: flex;
     overflow: hidden;
-    height: 500px;
+    /* height: 500px; */
     align-items: center;
-/*     justify-content: space-around; */
+    justify-content: center;
+    justify-content: space-around; 
 }
 
 .pagina h1,
@@ -144,19 +145,21 @@ p{
 }
 
 .col_t1 {
-    width: 40%;
+    width: 40%; 
     border-radius: 3px;
     margin: 10px;
     padding: 10px;
     text-align: center;
     overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     align-items: center;
 }
 
 .col_t2 {
-    width: 60%;
+    width: 60%; 
     border-radius: 3px;
     margin: 10px;
     padding: 50px;
@@ -167,6 +170,7 @@ p{
     align-items: center;
     justify-content: center;
 }
+
 
 .entrada {
     display: block;
@@ -209,7 +213,7 @@ p{
     color: #ffffff;
     border: 2px solid var(--color-blanco);
     cursor: pointer;
-    font: "Hahmlet-Black", "Hahmlet";
+    font-family: "Hahmlet-Black", "Hahmlet";
     background: var(--color-rojo);
     border-radius: var(--border-radius);
     text-align: center;
@@ -223,6 +227,17 @@ p{
 
 .boton:active {
     transform: scale(0.9);
+}
+#mapa {
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+}
+.boton:nth-child(2){
+    width: 40%;
+}
+#boton_cercano{
+    margin-bottom: 30px;
 }
 /* 
 
@@ -263,25 +278,34 @@ p{
 @media screen and (max-width: 600px){
     .container{
         display: block;
-        z-index: 2;
+        z-index: 3;
     }
     .navbar{
-        z-index: 1;
+        z-index: 2;
     }
     .navbar-inner{
         display: none;
     }
     .pagina{
         flex-wrap: wrap;
+    }
+    .col_t1, .col_t2{
+        width: 100%;
+    }
+    #mapa{
+        z-index: 1;
+    }
+    .boton:nth-child(2){
+        width: 100%;
     }
 }
 @media screen and (max-width: 768px){
     .container{
         display: block;
-        z-index: 2;
+        z-index: 3;
     }
     .navbar{
-        z-index: 1;
+        z-index: 2;
     }
     .navbar-inner{
         display: none;
@@ -289,6 +313,18 @@ p{
     .pagina{
         flex-wrap: wrap;
     }
+    .col_t1, .col_t2{
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #mapa{
+        z-index: 1;
+    }
+    .boton:nth-child(2){
+        width: 100%;
+    }
+    
 }
 
 .calendar {
@@ -346,4 +382,8 @@ p{
 
 .calendar__last-days {
     opacity: .3; 
+}
+.calendar__past {
+    color: gray;
+    pointer-events: none;
 }

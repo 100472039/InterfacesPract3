@@ -1,39 +1,39 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Calendario Interactivo</title>
+    <title>Mapa de Restaurantes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <style>
+        /* Asegúrate de que el div del mapa tiene una altura y anchura definida */
+        #mapa {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+    <div id="mapa"></div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Asegúrate de que el mapa se inicializa después de que el DOM esté completamente cargado
+            let mapa = L.map('mapa').setView([40.416775, -3.703790], 13); // Coordenadas de Madrid
 
-<h1 class="title">Calendario Interactivo</h1>
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+            }).addTo(mapa);
 
-<div class="calendar">
-    <div class="calendar__info">
-        <div class="calendar__prev" id="prev-month">&#9664;</div>
-        <div class="calendar__month" id="month"></div>
-        <div class="calendar__year" id="year"></div>
-        <div class="calendar__next" id="next-month">&#9654;</div>
-    </div>
+            let restaurantes = [
+                { nombre: 'Restaurante 1', latitud: 40.359575250820996,  longitud: -3.776685816751896 },
+                // Añade aquí los demás restaurantes
+            ];
 
-    <div class="calendar__week">
-        <div class="calendar__day calendar__item">Mon</div>
-        <div class="calendar__day calendar__item">Tue</div>
-        <div class="calendar__day calendar__item">Wed</div>
-        <div class="calendar__day calendar__item">Thu</div>
-        <div class="calendar__day calendar__item">Fri</div>
-        <div class="calendar__day calendar__item">Sat</div>
-        <div class="calendar__day calendar__item">Sun</div>
-    </div>
-
-    <div class="calendar__dates" id="dates"></div>
-</div>
-
-<script src="script.js"></script>
+            for (let i = 0; i < restaurantes.length; i++) {
+                let restaurante = restaurantes[i];
+                L.marker([restaurante.latitud, restaurante.longitud]).addTo(mapa)
+                    .bindPopup(restaurante.nombre);
+            }
+        });
+    </script>
 </body>
 </html>
