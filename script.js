@@ -139,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { nombre: 'Pl. Canovas del Castillo, 5, 28014 Madrid', latitud: 40.416965,   longitud:  -3.695088 },
         { nombre: 'C. de Alcalá, 474, 28027 Madrid', latitud: 40.442923312164886,   longitud: -3.6328853232195697 },
         { nombre: 'O. Planetocio, Av. Juan Carlos I, 46, C.C, 28400 Collado Villalba, Madrid', latitud: 40.640677004716856,   longitud:  -4.01831473042606},
+        {nombre: 'C. Isabel II, 1, 28660 Boadilla del Monte, Madrid', latitud: 40.40845614083459,   longitud:  -3.88070181694461},
+        
         
         // Añade aquí los demás restaurantes
     ];
