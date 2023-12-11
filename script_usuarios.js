@@ -58,7 +58,8 @@ function validarRegistro() {
         nombre: nombre,
         contraseña: contraseña,
         email: email,
-        coins: 500,
+        nPedidos: 0,
+        nReservas: 0,
     };
 
     // Añadir usuario a la lista
