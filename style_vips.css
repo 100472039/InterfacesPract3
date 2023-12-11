@@ -553,10 +553,6 @@ a {
     margin-left: 15px;
 }
 
-.imagenes {
-    display: flex;
-}
-
 .footer .text-wrapper {
     font-family: "Hahmlet-Bold", Helvetica;
     font-weight: 700;
@@ -564,6 +560,11 @@ a {
     font-size: 18px;
     width:100%;
 }
+
+.imagenes {
+    display: flex;
+}
+
 @media only screen and (max-width: 1120px) {
 
     .contenedor-descr{

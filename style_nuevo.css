@@ -584,7 +584,7 @@ p{
 
 }
 
-.footer {
+/* .footer {
     display: none;
     position: fixed;
     width: 100%;
@@ -615,7 +615,41 @@ p{
     color: var(--color-blanco);
     font-size: 25px;
     margin-right: 30px;
+} */
+
+.footer {
+    width: 100%;
+    background-color: var(--color-rojo);
+    font-family: "Hahmlet-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--color-blanco);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer img {
+    margin-left: 15px;
+}
+
+.footer .text-wrapper {
+    font-family: "Hahmlet-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--color-blanco);
+    font-size: 18px;
+    width:100%;
+}
+
 #comentariosGuardados {
     border: 1px solid;
     padding: 20px;
