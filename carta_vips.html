@@ -14,19 +14,37 @@
 
     </head>
     <body>
-
         <header>
-            <div class="navbar">
-                <img src="img/VIPS-1.png">
-                <div class="navbar-inner">
-                  <a href=#promociones>Inicio</a>
-                  <a href=reserva.html >Reservar</a>
-                </div>
+            <div class="container">
+                <label for="btn-menu" class="icono-menu"> ☰</label>
             </div>
-    </header>
+        </header>
+        <input type="checkbox" id="btn-menu">
+        <div class ="container-menu">
+            <div class = "cont-menu">
+                <nav>
+                    <a href=reserva.html>Reservar</a>
+                    <a href="carrito_vips.html">Pedido a domicilio</a>
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="register.html">Registro de usuarios</a>
+                    <a href="inicio.html">Inicio</a>
+                </nav>
+                <label for="btn-menu" class="icon-equis">✖️</label>
+            </div>
+        </div>
+        <div class="navbar">
+            <img src="img/VIPS-1.png">
+            <div class="navbar-inner">
+                <a href=reserva.html>Reservar</a>
+                <a href="carrito_vips.html">Pedido a domicilio</a>
+                <a href="login.html">Iniciar sesión</a>
+                <a href="register.html">Registro de usuarios</a>
+                <a href="inicio.html">Inicio</a>
+            </div>
+        </div>
     <main>
         <section class="paso mostrar" id="paso1">
-            <h4 class="tituloPaso1">Nuestra Carta.</h4>
+            <h1 class="tituloPaso1">Nuestra Carta</h1>
             <p class="descripcion">¡LO MEJOR DEL VIPS!</p>
             <div class="contenedor-titulos">
                 <h6 class="titulo-apartado">Entrantes.</h6>
@@ -414,8 +432,6 @@
             </div>
             
         </section>
-    
-
     </main>
     <footer class="footer">
         <div>
@@ -437,9 +453,6 @@
             <a href="https://www.vips.es/atencion-al-cliente" class="text-wrapper">Atención al cliente
             </a>  
         </div>
-    </footer>
-
-
-    
-<script src="carta.js"></script>
-</body>
+      </footer>    
+    <script src="carta.js"></script>
+    </body>

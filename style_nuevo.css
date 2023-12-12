@@ -565,9 +565,9 @@ p{
         flex-grow: 0;
         margin:10px;
     }
-    .navbar{
+/*     .navbar{
         z-index: 1;
-    }
+    } */
     .platos{
         flex-wrap: wrap;
     }
