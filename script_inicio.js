@@ -88,3 +88,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script ejecutado");
+    
+    console.log(window.location.pathname);
+    if (window.location.pathname == "/reserva_finalizada.html"){
+        console.log("Se cambió la posición del footer.");
+        let footer = document.getElementById('foot');
+        if (footer) {
+            footer.style.position = "fixed";
+           
+        } else {
+            console.error("No se encontró ningún elemento con la clase 'footer'.");
+        }
+        console.log(footer)
+    }
+});

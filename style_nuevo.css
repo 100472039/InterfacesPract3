@@ -236,7 +236,7 @@ p{
 .novedades .platos img{
     object-fit: cover;
     width: 100%;
-    min-width: 200px;
+    min-width: 210px;
 }
 .plato1{
     margin-left: 50px;
@@ -560,19 +560,22 @@ p{
     color: #888; 
     float: right;
 }
+
+@media only screen and (max-width: 1178px){
+    .navbar{
+        height: 100px;
+    }
+}
 @media screen and (max-width: 600px){
     .reservar, .pedir {
         flex-grow: 0;
         margin:10px;
     }
-/*     .navbar{
-        z-index: 1;
-    } */
     .platos{
         flex-wrap: wrap;
     }
     .platos img{
-        width: 400px;
+        width: 410px;
         height: 350px;
     }
     .plato2, .plato1{
@@ -601,7 +604,6 @@ p{
     .footer img {
         margin-left: 0px;
     }
-
 }
 @media screen and (max-width: 768px){
     .pagina1{
@@ -619,6 +621,7 @@ p{
     }
     .navbar{
         z-index: 1;
+        height: 62px;
     }
     .navbar-inner{
         display: none;
@@ -638,10 +641,14 @@ p{
     .grid-container {
         margin:10px;
     }
-    .footer{
-        font-size: 15px;
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    .footer img {
-        margin-left: 10px;
+
+    .footer .text-wrapper {
+        margin-left: 0;
+        margin-right: 0;
     }
 }

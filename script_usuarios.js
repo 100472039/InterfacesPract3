@@ -9,7 +9,6 @@ function buscarUsuario(email) {
 
 function validarRegistro() {
     if (window.location.pathname != "/register.html"){
-        console.log(window.location.pathname);
         return false;
     }
     const dni = document.getElementById('dni_r').value;
@@ -102,3 +101,14 @@ function validarLogin(){
     window.location = 'inicio.html';
     return true;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname == "/login.html"){
+        let footer = document.getElementsByClassName('footer');
+        if (footer.length > 0) {
+            footer[0].style.position = "fixed";
+        } else {
+            console.error("No se encontró ningún elemento con la clase 'footer'.");
+        }
+    }
+});
