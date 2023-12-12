@@ -1,39 +1,156 @@
 let productosCarrito = {};
 
 document.addEventListener("DOMContentLoaded", function() {
-    var paso1 = document.getElementById('paso1');
-    var paso2 = document.getElementById('paso2');
-    var paso2_2 = document.getElementById('paso2_2');
-    var paso3 = document.getElementById('paso3');
-    var alergenos = document.getElementById('alergenos');
-    var menu_infantil = document.getElementById('menu_infantil')
+    let paso1 = document.getElementById('paso1');
+    let paso2 = document.getElementById('paso2');
+    let paso2_2 = document.getElementById('paso2_2');
+    let paso3 = document.getElementById('paso3');
+    let alergenos = document.getElementById('alergenos');
+    let menu_infantil = document.getElementById('menu_infantil')
     let contenedorMigas = document.querySelectorAll('.contenedor-migas');
     let textomp = document.querySelectorAll('.textomp');
     contenedorMigas[0].style.backgroundColor = '#dd1b2d';
     textomp[0].style.color = 'white';
 
-    var paso1Selector = document.getElementById('paso1Selector');
-    var paso2Selector = document.getElementById('paso2Selector');
-    var paso22Selector = document.getElementById('boton-insertar');
-    var paso3Selector = document.getElementById('paso3Selector');
-    var paso3confirmar = document.getElementById('boton-pago');
-    var paso3añadirplatos = document.getElementById('boton-pago2');
-    var paso3_1confirmar = document.getElementById('boton-pago3');
-    var paso3_1añadirplatos = document.getElementById('boton-pago4');
-    var paso3inicio = document.getElementById('boton-inicio');
-    var alergenossel = document.getElementById('alergenossel');
-    var tituloinf = document.getElementById('titulo-apartado-inf');
+    let paso1Selector = document.getElementById('paso1Selector');
+    let paso2Selector = document.getElementById('paso2Selector');
+    let paso22Selector = document.getElementById('boton-insertar');
+    let paso3Selector = document.getElementById('paso3Selector');
+    let paso3confirmar = document.getElementById('boton-pago');
+    let paso3añadirplatos = document.getElementById('boton-pago2');
+    let paso3_1confirmar = document.getElementById('boton-pago3');
+    let paso3_1añadirplatos = document.getElementById('boton-pago4');
+    let paso3inicio = document.getElementById('boton-inicio');
+    let alergenossel = document.getElementById('alergenossel');
+    let tituloinf = document.getElementById('titulo-apartado-inf');
 
     function hayProductosEnCarrito() {
         return Object.keys(productosCarrito).length > 0;
     }
     
     function InputsCompletados() {
-        let inputs = document.querySelectorAll('input');
-        return Array.from(inputs).every(input => input.value !== '');
+        if (verificarformatoTitular() == false ||verificarformatoTelefono() == false|| verificarformatoEmail() == false || 
+        verificarformatoTarjeta()== false || verificarformatoFecha() == false ||  verificarformatoCVC() == false) {
+            return false;
+        }
+
+        return true;
+    }
+    function verificarformatoTelefono(){
+        var telefono = document.getElementById("telefono").value;
+        var expresion = /^[0-9]{9}$/;
+        if (telefono === "") {
+            document.getElementById("telefono").style.border = "2px solid red";
+            alert("El campo telefono esta vacio");
+            return false;
+        } else if (!expresion.test(telefono)) {
+            document.getElementById("telefono").style.border = "2px solid red";
+            alert("El telefono no es valido");
+            return false;
+        } else {
+            document.getElementById("telefono").style.border = "2px solid green";
+            return true;
+        }
     }
     
-
+    function verificarformatoEmail(){
+        let email = document.getElementById("email").value;
+        let expresion = /\w+@\w+\.+[a-z]/;
+        if (email === "") {
+            document.getElementById("email").style.border = "2px solid red";
+            alert("El campo email esta vacio");
+            return false;
+        } else if (!expresion.test(email)) {
+            document.getElementById("email").style.border = "2px solid red";
+            alert("El email no es valido");
+            return false;
+        } else {
+            document.getElementById("email").style.border = "2px solid green";
+            return true;
+        }
+    }
+    function verificarformatoTitular(){
+        let nombre = document.getElementById("titular").value;
+        let regexNombre = /^[a-zA-Z\s]*$/; // Expresión regular para nombres que solo contienen letras y espacios
+        if (nombre === "") {
+            document.getElementById("titular").style.border = "2px solid red";
+            alert("El campo titular esta vacio");
+            return false;
+        } else if (!regexNombre.test(nombre)) {
+            document.getElementById("titular").style.border = "2px solid red";
+            alert("El titular solo debe contener letras y espacios");
+            return false;
+        } else {
+            document.getElementById("titular").style.border = "2px solid green";
+            return true;
+        }
+    }
+    function verificarformatoDireccion(){
+        let nombre = document.getElementById("direccion").value;
+        let regexNombre = /^[a-zA-Z0-9\s]*$/; // Expresión regular para nombres que solo contienen letras y espacios
+        if (nombre === "") {
+            document.getElementById("titular").style.border = "2px solid red";
+            alert("El campo direccion esta vacio");
+            return false;
+        } else if (!regexNombre.test(nombre)) {
+            document.getElementById("direccion").style.border = "2px solid red";
+            alert("La direccion solo debe contener letras, numeros y espacios");
+            return false;
+        } else {
+            document.getElementById("direccion").style.border = "2px solid green";
+            return true;
+        }
+    }
+    function verificarformatoTarjeta(){
+        let tarjeta = document.getElementById("tarjeta").value;
+        let expresion = /^[0-9]{16}$/;
+        if (tarjeta === "") {
+            document.getElementById("tarjeta").style.border = "2px solid red";
+            alert("El campo numero de la tarjeta esta vacio");
+            return false;
+        } else if (!expresion.test(tarjeta)) {
+            document.getElementById("tarjeta").style.border = "2px solid red";
+            alert("El numero de la tarjeta no es valido");
+            return false;
+        } else {
+            document.getElementById("tarjeta").style.border = "2px solid green";
+            return true;
+        }
+    }
+    
+    function verificarformatoFecha(){
+        let fecha = document.getElementById("caducidad").value;
+        let expresion = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+        if (fecha === "") {
+            document.getElementById("caducidad").style.border = "2px solid red";
+            alert("El campo fecha esta vacio");
+            return false;
+        } else if (!expresion.test(fecha)) {
+            document.getElementById("caducidad").style.border = "2px solid red";
+            alert("El fecha no es valido");
+            return false;
+        } else {
+            document.getElementById("caducidad").style.border = "2px solid green";
+            return true;
+        }
+    }
+    
+    function verificarformatoCVC(){
+        let cvc = document.getElementById("cvc").value;
+        let expresion = /^[0-9]{3}$/;
+        if (cvc === "") {
+            document.getElementById("cvc").style.border = "2px solid red";
+            alert("El campo CVC esta vacio");
+            return false;
+        } else if (!expresion.test(cvc)) {
+            document.getElementById("cvc").style.border = "2px solid red";
+            alert("El CVC no es valido");
+            return false;
+        } else {
+            document.getElementById("cvc").style.border = "2px solid green";
+            return true;
+        }
+    }
     // Función para mostrar el paso correspondiente.
     function mostrarPaso1(event) {
         event.preventDefault();
@@ -67,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
             textomp[1].style.color = 'white';
             contenedorMigas[2].style.backgroundColor = 'white';
             textomp[2].style.color = '#dd1b2d';
-        } else {
+        }else {
             alert('Por favor, añade algo al carrito antes de continuar.');
         }
     }
@@ -105,9 +222,9 @@ document.addEventListener("DOMContentLoaded", function() {
             textomp[2].style.color = 'white';
             contenedorMigas[0].style.backgroundColor = 'white';
             textomp[0].style.color = '#dd1b2d';
-        } else {
+        } /* else {
             alert('Por favor, completa todos los campos antes de continuar.');
-        }
+        } */
     }
     function mostrarAlergenos(event) {
         event.preventDefault();
@@ -277,15 +394,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function(){
     //lISTA PARA SELECCIONAR MÁS DE UNO
-    var alergenosSeleccionados = [];
+    let alergenosSeleccionados = [];
     document.querySelectorAll('.contenedor-alergias-sel img').forEach(function(img) {
         img.addEventListener('click', function() {
-            var seleccionado = this.src.includes('_sel');
+            let seleccionado = this.src.includes('_sel');
 
             // Cambia la imagen del alérgeno
             if (seleccionado) {
                 this.src = this.src.replace('_sel.png', '.png');
-                var index = alergenosSeleccionados.indexOf(this.dataset.alergenos);
+                let index = alergenosSeleccionados.indexOf(this.dataset.alergenos);
                 if (index > -1) {
                     alergenosSeleccionados.splice(index, 1);
                 }

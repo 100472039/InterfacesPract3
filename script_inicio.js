@@ -7,6 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
         EnviarComen();
     });
 });
+window.onload = function() {
+    document.getElementById("realizar_pedido").onclick = function(event) {
+        event.preventDefault(); // Evita la acción predeterminada del enlace
+        if (localStorage.getItem("usuario")) {
+            window.location.href = "carrito_vips.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    }
+}
+
+/* document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('realizar_pedido').addEventListener('click', function (event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        let usuario = JSON.parse(localStorage.getItem("usuario"));
+        if (usuario) {
+            console.log("hay usuario");
+            window.location.href = "carrito_vips.html";
+        } else {
+            
+            alert("Debe iniciar sesión para realizar un pedido.")
+            window.location.href = "login.html";
+        }
+    });
+}); */
 document.addEventListener('DOMContentLoaded', function() {
     let promocionesLink = document.querySelector('a[href="#promociones"]');
     promocionesLink.addEventListener('click', function() {
