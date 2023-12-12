@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const writeMonth = (month) => {
         let today = new Date();
-        today.setHours(0, 0, 0, 0); // Asegúrate de que la hora sea medianoche para la comparación
+        today.setHours(0, 0, 0, 0); 
     
         for(let i = startDay(); i>0;i--){
             dates.innerHTML += ` <div class="calendar__date calendar__item calendar__last-days">
@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         for(let i=1; i<=getTotalDays(month); i++){
             let date = new Date(currentYear, monthNumber, i);
             if (date < today) {
-                // Si el día es anterior a la fecha actual, añade la clase 'calendar__past'
                 dates.innerHTML += ` <div class="calendar__date calendar__item calendar__past">${i}</div>`;
             } else {
                 dates.innerHTML += ` <div class="calendar__date calendar__item" onclick="selectDay(this, ${i})">${i}</div>`;
@@ -140,9 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { nombre: 'C. de Alcalá, 474, 28027 Madrid', latitud: 40.442923312164886,   longitud: -3.6328853232195697 },
         { nombre: 'O. Planetocio, Av. Juan Carlos I, 46, C.C, 28400 Collado Villalba, Madrid', latitud: 40.640677004716856,   longitud:  -4.01831473042606},
         {nombre: 'C. Isabel II, 1, 28660 Boadilla del Monte, Madrid', latitud: 40.40845614083459,   longitud:  -3.88070181694461},
-        
-        
-        // Añade aquí los demás restaurantes
     ];
     let direcciones = [];
     
@@ -161,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("direccion").style.border = "2px solid white";
     }
     document.getElementById('enviar').addEventListener('click', function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe (si es un formulario)
-        EnviarReserva(); // Llama a la función EnviarReserva
+        event.preventDefault();
+        EnviarReserva();
     });
     document.getElementById("boton_cercano").addEventListener("click", function() {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -208,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         let reserva = {
-            nombre: document.getElementById("nombre").value,
+            nombre: document.getElementById("nombre").value.trim(), // Elimina espacios al final
             telefono: document.getElementById("telefono").value,
             email: document.getElementById("email").value,
             direccion: restauranteSeleccionado ? restauranteSeleccionado.nombre : document.getElementById("direccion").value,

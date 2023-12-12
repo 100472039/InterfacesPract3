@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
     <link rel="stylesheet" href="style_nuevo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +21,12 @@
     <div class ="container-menu">
         <div class = "cont-menu">
             <nav>
-                <a href="#promociones" onclick="cerrarMenu()">Promociones</a>
-                <a href=reserva.html onclick="cerrarMenu()">Reservar</a>
-                <a href="#link3" onclick="cerrarMenu()">Pedido a domicilio</a>
-                <a href="login.html" onclick="cerrarMenu()">Iniciar sesión</a>
-                <a href="register.html" onclick="cerrarMenu()">Registro de usuarios</a>
+                <a href="#promociones">Promociones</a>
+                <a href=reserva.html>Reservar</a>
+                <a href="carrito_vips.html">Pedido a domicilio</a>
+                <a href="carta_vips.html">Carta</a>
+                <a href="login.html">Iniciar sesión</a>
+                <a href="register.html">Registro de usuarios</a>
             </nav>
             <label for="btn-menu" class="icon-equis">✖️</label>
         </div>
@@ -35,11 +34,12 @@
     <div class="navbar">
       <img src="img/VIPS-1.png">
       <div class="navbar-inner">
-        <a href="login.html">Iniciar sesión</a>
-        <a href="register.html">Registro de usuarios</a>
         <a href=#promociones>Promociones</a>
         <a href=reserva.html >Reservar</a>
-        <a href=pedido.html>Pedido a domicilio</a>     
+        <a href="carrito_vips.html">Pedido a domicilio</a>
+        <a href="carta_vips.html">Carta</a>
+        <a href="login.html">Iniciar sesión</a>
+        <a href="register.html">Registro de usuarios</a>
       </div>
     </div>
     <section class="portada">
@@ -59,11 +59,13 @@
     <section class="pagina1"> 
       <div class="reservar">
         <img src="img/vips-mesa-1.png" alt="foto2">
-        <div class="boton">RESERVA MESA</div>
+        <a href="reserva.html" class="boton">
+          RESERVA MESA
+        </a>
       </div>    
       <div class="pedir">
         <img src="img/pedir-1.png" alt="foto1">
-        <div class="boton">HACER PEDIDO</div>
+        <a href="carrito_vips.html" class="boton">HACER PEDIDO</a>
       </div> 
     </section>
     <section class="pagina2" id="promociones">
@@ -78,21 +80,21 @@
           <img src="img/plato2222.png" alt="foto5">
           <div class="overlay">
             <p>Carbonara de Soria</p>
-            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+            <a href="carrito_vips.html" class="boton-pedir">Pedir ahora</a>
           </div>
         </div>
         <div class="plato2">
           <img src="img/plato1.png" alt="foto4">
           <div class="overlay">
             <p>VIPS Wellington</p>
-            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+            <a href="carrito_vips.html" class="boton-pedir">Pedir ahora</a>
           </div>
         </div>
         <div class="plato3">
           <img src="img/plato3.png" alt="foto6">
           <div class="overlay">
             <p>Albóndigas ibéricas</p>
-            <a href="pedido" class="boton-pedir">Pedir ahora</a>
+            <a href="carrito_vips.html" class="boton-pedir">Pedir ahora</a>
           </div>
         </div>
       </div>
@@ -144,7 +146,7 @@
           <img src="img/samsung.png" alt="foto6">
           <p>Nos importa tu opinión, ¡deja tu comentario!</p>
           <textarea id="comentarios" name="comentarios" maxlength="100"></textarea>
-          <input class="boton-comentario" type="button" value="Enviar" onclick="EnviarComen()">
+          <input class="boton-comentario" type="button" value="Enviar" id="enviarComentarioButton">
           
         </div>
 
@@ -180,5 +182,5 @@
           </a>  
       </div>
     </footer>
-    </body>
+  </body>
 </html>

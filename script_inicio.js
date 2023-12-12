@@ -1,3 +1,18 @@
+function cerrarMenu() {
+    var btnMenu = document.getElementById('btn-menu');
+    btnMenu.checked = false;
+}
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('enviarComentarioButton').addEventListener('click', function () {
+        EnviarComen();
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    let promocionesLink = document.querySelector('a[href="#promociones"]');
+    promocionesLink.addEventListener('click', function() {
+        cerrarMenu();
+    });
+});
 function EnviarComen(){
     let comentario = document.getElementById("comentarios").value;
     

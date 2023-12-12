@@ -9,105 +9,6 @@ body{
     background-color: var(--color-blanco-sucio);
     color: var(--color-rojo);
 }
-.navbar {
-    position: fixed;
-    background-color: var(--color-rojo);
-    width: 100%;
-    height: 62px;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-.navbar img{
-    margin-top: 10px;
-    float: left;
-    width: 300px;
-    height: 60px; 
-    object-fit: cover;
-}
-.navbar a{
-    text-shadow: 0px 4px 4px var(--color-shadow);
-    font: "Hahmlet-Black", "Hahmlet";
-    font-weight: 900;
-    color: var(--color-blanco);
-    font-size: 25px;
-    margin-top: 20px;
-    float: right;
-    margin-right: 50px;
-}
-.container{
-    position: fixed;
-    width: 90%;
-    max-width: 1200px;
-    display: none;
-}
-
-.container label{
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-    margin-right: 5px;
-    margin-top: -50px;
-    float:right;
-}
-
-#btn-menu{
-    display: none;
-}
-
-.container-menu{
-    position: relative;
-    position: fixed;
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-    top:0;right:0;
-    transition: all 500ms ease;
-    visibility: hidden;
-
-}
-#btn-menu:checked ~ .container-menu{ /*Cuando el checkbox está seleccionado se le pondrá el estilo a la clase container-menu*/
-    opacity: 1;
-    visibility: visible;
-}
-.cont-menu{
-    width: 100%;
-    max-width: 250px;
-    background: var(--color-rojo);
-    height: 100%;
-    position: fixed;
-    transition: all 500ms ease;
-    transform: translateX(100%);
-    right:0;
-}
-#btn-menu:checked ~ .container-menu .cont-menu{ /*Cuando el checkbox está seleccionado se abre el menu*/
-    transform: translateX(0%);
-}
-.cont-menu nav{
-    transform: translateY(15%);
-}
-.cont-menu nav a{
-    display:block;
-    text-decoration: none;
-    padding: 20px;
-    color: white;
-    transition: all 400ms ease;
-    font: "Hahmlet-Black", "Hahmlet";
-}
-.cont-menu nav a:hover{
-    border-left: 5px solid var(--color-blanco);
-    background: rgba(0,0,0,0.5);
-    padding-left: 30px;
-}
-.cont-menu label{
-    position: absolute;
-    right: 5px; 
-    top: 10px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    transition: all 500ms ease;
-}
 
 h1 {
     font-family: "Secular One";
@@ -120,27 +21,31 @@ h2 {
     font-size: 40px;
     margin-top: 60px;
     text-align: center;
+    color: var(--color-rojo);
+    text-shadow: none;
 }
+
 p{
     color: var(--color-rojo);
     font-family: "Secular One";
     font-size: 25px;
 }
+.boton a{
+    font: "Hahmlet-Black", "Hahmlet";
+}
 .pagina {
     border-radius: 3px;
-    /* margin: 10px; */
     padding: 10px;
     display: flex;
     overflow: hidden;
-    /* height: 500px; */
     align-items: center;
     justify-content: center;
     justify-content: space-around; 
 }
 
 .pagina h1,
-.pagina .contacto,
-.pagina .boton {
+.pagina .contacto
+{
     width: 100%;
 }
 
@@ -170,8 +75,6 @@ p{
     align-items: center;
     justify-content: center;
 }
-
-
 .entrada {
     display: block;
     width: 100%;
@@ -207,27 +110,8 @@ p{
 
 .boton {
     width: 33%;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #ffffff;
-    border: 2px solid var(--color-blanco);
-    cursor: pointer;
-    font-family: "Hahmlet-Black", "Hahmlet";
-    background: var(--color-rojo);
-    border-radius: var(--border-radius);
-    text-align: center;
 }
 
-.boton:hover {
-    color: var(--color-rojo);
-    border: 2px solid var(--color-rojo);
-    background: var(--color-blanco-sucio);
-}
-
-.boton:active {
-    transform: scale(0.9);
-}
 #mapa {
     height: 400px;
     width: 100%;
@@ -239,94 +123,6 @@ p{
 #boton_cercano{
     margin-bottom: 30px;
 }
-/* 
-
-.slider {
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider ul {
-    display: flex;
-    padding: 0;
-    width: 300%;
-
-    animation: cambio 15s infinite ease-in-out;
-}
-
-.slider li {
-    width: 100%;
-    list-style: none;
-}
-
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes cambio{
-    0% {margin-left: 0;}
-    28% {margin-left: 0;}
-    33% {margin-left: -102%;}
-    62% {margin-left: -102%;}
-    67% {margin-left: -202%;}
-    95% {margin-left: -202%;}
-    100% {margin-left: 0%;}
-} */
-@media screen and (max-width: 600px){
-    .container{
-        display: block;
-        z-index: 3;
-    }
-    .navbar{
-        z-index: 2;
-    }
-    .navbar-inner{
-        display: none;
-    }
-    .pagina{
-        flex-wrap: wrap;
-    }
-    .col_t1, .col_t2{
-        width: 100%;
-    }
-    #mapa{
-        z-index: 1;
-    }
-    .boton:nth-child(2){
-        width: 100%;
-    }
-}
-@media screen and (max-width: 768px){
-    .container{
-        display: block;
-        z-index: 3;
-    }
-    .navbar{
-        z-index: 2;
-    }
-    .navbar-inner{
-        display: none;
-    }
-    .pagina{
-        flex-wrap: wrap;
-    }
-    .col_t1, .col_t2{
-        width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    #mapa{
-        z-index: 1;
-    }
-    .boton:nth-child(2){
-        width: 100%;
-    }
-    
-}
-
 .calendar {
     background: var(--color-blanco);
     width: 80%;
@@ -388,35 +184,36 @@ p{
     pointer-events: none;
 }
 
-.footer {
-    width: 100%;
-    background-color: var(--color-rojo);
-    font-family: "Hahmlet-Bold", Helvetica;
-    font-weight: 700;
-    color: var(--color-blanco);
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: normal;
-    display: flex;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
+
+@media screen and (max-width: 600px){
+    .col_t1, .col_t2{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .container{
+        display: block;
+        z-index: 3;
+    }
+    .navbar{
+        z-index: 2;
+    }
+    .navbar-inner{
+        display: none;
+    }
+    .pagina{
+        flex-wrap: wrap;
+    }
+    .col_t1, .col_t2{
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #mapa{
+        z-index: 1;
+    }
+    .boton:nth-child(2){
+        width: 100%;
+    }
 }
 
-.footer a {
-    text-decoration: none;
-}
-
-.footer img {
-    margin-left: 15px;
-}
-
-.footer .text-wrapper {
-    font-family: "Hahmlet-Bold", Helvetica;
-    font-weight: 700;
-    color: var(--color-blanco);
-    font-size: 18px;
-    width:100%;
-}
