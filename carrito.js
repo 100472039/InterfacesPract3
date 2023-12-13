@@ -24,21 +24,82 @@ document.addEventListener("DOMContentLoaded", function() {
     let alergenossel = document.getElementById('alergenossel');
     let tituloinf = document.getElementById('titulo-apartado-inf');
 
+    let iconoCarrito = document.querySelector('label[for="btn-menu"]');
+    let menuCarrito = document.querySelector('#menu-carrito');
+    let contenedorProductos = document.querySelector('#productos-carrito');
+    let totalCarrito = document.querySelector('#total-carrito');
+    let productosSeleccionados = [];
+
     function hayProductosEnCarrito() {
         return Object.keys(productosCarrito).length > 0;
     }
-    
     function InputsCompletados() {
         if (verificarformatoTitular() == false ||verificarformatoTelefono() == false|| verificarformatoEmail() == false || 
         verificarformatoTarjeta()== false || verificarformatoFecha() == false ||  verificarformatoCVC() == false) {
             return false;
         }
+        // Lista de usuarios
+        let descuento = 0;
+        let descuento_c = 0;
+        let totalCarrito = document.querySelector('#total-carrito');
+        let totalTexto = totalCarrito.textContent.replace('Total: ', '').replace('€', '');
+        let total = parseFloat(totalTexto);
+        cupon = document.getElementById("cupon").value;
+            if(cupon){
+                if(cupon == "VIPS5"){
+                    descuento_c += 5;
+                    alert("Se ha aplicado un descuento del 5% con tu cupón");
+                }
+                else if(cupon == "VIPS10"){
+                    descuento_c += 10;
+                    alert("Se ha aplicado un descuento del 10% con tu cupón");
+                }
+                else if(cupon == "VIPS15"){
+                    descuento_c += 15;
+                    alert("Se ha aplicado un descuento del 15% con tu cupón");
+                }
+                else{
+                    alert("Lo sentimos, no hay ningún cupón con ese código");
+                }
+            }
+        let email = document.getElementById("email").value;
+        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const usuario_registrado = usuarios.find((usuario) => usuario.email == email);
+        if (usuario_registrado){
+            // Comprobar el número de pedidos
+            if (usuario_registrado.nPedidos == 0) {
+                descuento += 10;
+                alert("¡Se ha aplicado un descuento del 10% por ser tu primer pedido!")
+            }
+            if (usuario_registrado.nPedidos == 2) {
+                descuento += 10;
+                alert("¡Se ha aplicado un descuento del 10% por ser tu quinto pedido!. Gracias por seguir pidiendo en nuestro restaurante")
+            }
+    
+            // Comprobar si la fecha del usuario es el día actual
+            let partesFecha = usuario_registrado.fecha.split("/");
+            let fechaUsuario = new Date(partesFecha[2], partesFecha[1] - 1, partesFecha[0]);
+            let hoy = new Date();
+            if (fechaUsuario.getDate() == hoy.getDate() && fechaUsuario.getMonth() == hoy.getMonth()) {
+                descuento += 10;
+                alert("¡Feleiz cumpleaños! Por ser tu día especail se ha aplicado un descuento del 10% a tu pedido. Gracias por seguir pidiendo en nuestro restaurante")
+            }
+            usuario_registrado.nPedidos += 1;
 
+            // Guardar la lista de usuarios actualizada en localStorage
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        }
+        if(descuento!=0 || descuento_c!=0){
+            total -= total*((descuento + descuento_c)/100);
+            alert("El precio final de tu pedido ha sido " + total.toFixed(2) + "€");
+            totalCarrito.textContent = 'Total: ' + total.toFixed(2) + '€';
+        }
         return true;
     }
     function verificarformatoTelefono(){
-        var telefono = document.getElementById("telefono").value;
-        var expresion = /^[0-9]{9}$/;
+        let telefono = document.getElementById("telefono").value;
+        let expresion = /^[0-9]{9}$/;
         if (telefono === "") {
             document.getElementById("telefono").style.border = "2px solid red";
             alert("El campo telefono esta vacio");
@@ -259,15 +320,9 @@ document.addEventListener("DOMContentLoaded", function() {
     alergenossel.addEventListener('click',mostrarAlergenos);
     tituloinf.addEventListener('click',mostrarMenuInfantil)
 
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    let iconoCarrito = document.querySelector('label[for="btn-menu"]');
-    let menuCarrito = document.querySelector('#menu-carrito');
-    let contenedorProductos = document.querySelector('#productos-carrito');
-    let totalCarrito = document.querySelector('#total-carrito');
-    let productosSeleccionados = [];
-
+/* });
+ */
+/* document.addEventListener('DOMContentLoaded', function() { */
     iconoCarrito.addEventListener('click', function() {
         // Cuando se hace click en el icono del carrito, muestra u oculta el menú del carrito
         if (menuCarrito.classList.contains('menu-visible')) {

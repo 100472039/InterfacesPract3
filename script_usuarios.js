@@ -8,14 +8,15 @@ function buscarUsuario(email) {
 }
 
 function validarRegistro() {
-    if (window.location.pathname != "/register.html"){
+    /* if (window.location.pathname != "/register.html"){
         return false;
-    }
+    } */
     const dni = document.getElementById('dni_r').value;
     const nombre = document.getElementById('nombre_r').value;
     const contraseña = document.getElementById('contrasena_r').value;
     const conf_contraseña = document.getElementById('conf_contrasena_r').value;
     const email = document.getElementById('email_r').value;
+    const fecha = document.getElementById('fecha_r').value;
 
     // Validar DNI
     const dniRegex = /^[0-9]{8}[A-Za-z]$/;
@@ -29,7 +30,20 @@ function validarRegistro() {
         alert('Por favor, ingrese su nombre y apellido');
         return false;
     }
-
+    const fechaRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/([12][0-9]{3})$/;
+    if(!fechaRegex.test(fecha)){
+        alert('Formato de la fecha inválido');
+        return false;
+    }
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+        alert('Formato de correo electrónico inválido');
+        return false;
+    }
+    if (buscarUsuario(email)) {
+        alert('Ya existe un usuario con ese correo electrónico');
+        return false;
+    }
     // Validar contraseña
     if (contraseña == '') {
         alert('Por favor, ingrese una contraseña');
@@ -41,15 +55,8 @@ function validarRegistro() {
     }
 
     // Validar correo electrónico
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-        alert('Formato de correo electrónico inválido');
-        return false;
-    }
-    if (buscarUsuario(email)) {
-        alert('Ya existe un usuario con ese correo electrónico');
-        return false;
-    }
+    
+    
 
     // Crear objeto de usuario
     const usuario = {
@@ -57,6 +64,7 @@ function validarRegistro() {
         nombre: nombre,
         contraseña: contraseña,
         email: email,
+        fecha: fecha,
         nPedidos: 0,
         nReservas: 0,
     };
@@ -73,9 +81,9 @@ function validarRegistro() {
 }
 
 function validarLogin(){
-    if (window.location.pathname != "/login.html"){
+    /* if (window.location.pathname != "/login.html"){
         return false;
-    }
+    } */
     const email = document.getElementById('email_l').value;
     const contraseña = document.getElementById('contrasena_l').value;
 

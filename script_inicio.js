@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         EnviarComen();
     });
 });
-window.onload = function() {
+/* window.onload = function() {
     document.getElementById("realizar_pedido").onclick = function(event) {
         event.preventDefault(); // Evita la acción predeterminada del enlace
         if (localStorage.getItem("usuario")) {
@@ -16,7 +16,7 @@ window.onload = function() {
             window.location.href = "login.html";
         }
     }
-}
+} */
 
 /* document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('realizar_pedido').addEventListener('click', function (event) {
