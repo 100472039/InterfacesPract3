@@ -1,3 +1,4 @@
+// Abre el menú de la barra de nacegación
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-menu-open').addEventListener('click', function() {
         abrirMenu();
@@ -41,9 +42,7 @@ function buscarUsuario(email) {
 }
 
 function validarRegistro() {
-    /* if (window.location.pathname != "/register.html"){
-        return false;
-    } */
+    // Obtener datos del formulario
     const dni = document.getElementById('dni_r').value;
     const nombre = document.getElementById('nombre_r').value;
     const contraseña = document.getElementById('contrasena_r').value;
@@ -63,16 +62,19 @@ function validarRegistro() {
         alert('Por favor, ingrese su nombre y apellido');
         return false;
     }
+    // Validar fecha de nacimiento
     const fechaRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/([12][0-9]{3})$/;
     if(!fechaRegex.test(fecha)){
         alert('Formato de la fecha inválido');
         return false;
     }
+    // Validar correo electrónico
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         alert('Formato de correo electrónico inválido');
         return false;
     }
+    // Buscar usuario por email
     if (buscarUsuario(email)) {
         alert('Ya existe un usuario con ese correo electrónico');
         return false;
@@ -82,15 +84,12 @@ function validarRegistro() {
         alert('Por favor, ingrese una contraseña');
         return false;
     }
+    // Validar confirmación de contraseña
     if(contraseña != conf_contraseña){
         alert('Las contraseñas no coinciden');
         return false;
     }
-
-    // Validar correo electrónico
     
-    
-
     // Crear objeto de usuario
     const usuario = {
         dni: dni,
@@ -114,9 +113,6 @@ function validarRegistro() {
 }
 
 function validarLogin(){
-    /* if (window.location.pathname != "/login.html"){
-        return false;
-    } */
     const email = document.getElementById('email_l').value;
     const contraseña = document.getElementById('contrasena_l').value;
 
@@ -143,6 +139,7 @@ function validarLogin(){
     return true;
 }
 
+// Arreglo del footer
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname == "/login.html"){
         let footer = document.getElementsByClassName('footer');

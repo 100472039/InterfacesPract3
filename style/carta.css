@@ -237,7 +237,7 @@ body {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    width: 33%; /* Cambiado a 100% para ocupar todo el ancho en pantallas pequeñas */
+    width: 33%; 
 }
 
 .img-container-product {

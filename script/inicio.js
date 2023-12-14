@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('enviarComentarioButton').addEventListener('click', function () {
-        EnviarComen();
+        EnviarComen(); //llama a la función para enviar comentarios
     });
 });
 
@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function abrirMenu() {
+    //abre el menú de hamburguesa en modo móvil o tablet
     var containerMenu = document.querySelector('.container-menu');
     containerMenu.style.opacity = 1;
     containerMenu.style.visibility = 'visible';
 }
 
 function cerrarMenu() {
+    //cierra el menú de hamburguesa en modo móvil o tablet
     var containerMenu = document.querySelector('.container-menu');
     containerMenu.style.opacity = 0;
     containerMenu.style.visibility = 'hidden';
@@ -50,6 +52,7 @@ function EnviarComen(){
         alert("El comentario no puede estar vacío.");
         return;
     }
+    //Se cargan los comentarios guardados y se añade el nuevo con su fecha
     let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
     let fecha = new Date();
     let fechaFormateada = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
@@ -62,6 +65,7 @@ function EnviarComen(){
     mostrarComentarios();
 }
 function limpiarCamposRegistro(){
+    //Se borran los datos de los campos
     document.getElementById("dni_r").value = "";
     document.getElementById("email_r").value = "";
     document.getElementById("nombre_r").value = "";
@@ -70,6 +74,7 @@ function limpiarCamposRegistro(){
     document.getElementById("conf_contrasena_r").value = "";
 }
 function mostrarComentarios() {
+    //muestra las reseñas con un ícono y la fecha
     let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
     let contenedorComentarios = document.getElementById("comentariosGuardados");
     contenedorComentarios.innerHTML = '';
@@ -81,6 +86,7 @@ function mostrarComentarios() {
 window.onload = mostrarComentarios;
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    //slider para el modo móvil
     const btnLeft = document.querySelector(".btn-left"),
           btnRight = document.querySelector(".btn-right"),
           slider = document.querySelector("#slider"),

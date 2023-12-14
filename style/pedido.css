@@ -484,7 +484,7 @@ a {
     border: 8px solid #dd1b2d;
 }
 
-#boton-sel{
+.boton-sel{
     width: 42%;
 }
 
@@ -622,15 +622,10 @@ a {
     .boton2{
     width: 35%;}
 
-
-    
     #titulo-apartado-inf {
-        position: absolute;
         top: 30%;
         left: 55%;
         width: 30%;
-        transform: translate(-70%, -70%);
-        border: 8px solid #dd1b2d;
     }
 }
 
@@ -668,12 +663,9 @@ a {
         margin-bottom: 10%;
     }
     #titulo-apartado-inf {
-        position: absolute;
         top: 30%;
         left: 57%;
         width: 35%;
-        transform: translate(-70%, -70%);
-        border: 8px solid #dd1b2d;
     }
     .columna-titulos {
         flex-direction: column;
@@ -802,11 +794,9 @@ a {
         flex-direction: row; 
         justify-content: space-between;
     }
-
     .producto-kentucky .imagen-producto {
         width: 95%;
     }
-
     .producto-kentucky .texto-producto {
         width: 100%;
         margin-right: 0%;
@@ -832,7 +822,6 @@ a {
         margin-top: 25%;
     }
 }
-
 @media only screen and (max-width: 608px) {
     #comida_titulo{
         margin-top: 35%;
@@ -847,7 +836,6 @@ a {
         width: 50%;
         margin-bottom: 7%;
     }
-
     #menuinf_titulo{
         margin-top: 35%;
     }

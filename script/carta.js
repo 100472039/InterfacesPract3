@@ -1,3 +1,4 @@
+// Abre el menú de la barra de nacegación
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-menu-open').addEventListener('click', function() {
         abrirMenu();
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menu_infantil.classList.remove('mostrar');
     }
 
-
+    // Función para mostrar el menu infantil.
     function mostrarMenuInfantil(event) {
         event.preventDefault();
         paso1.classList.remove('mostrar'); 
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function recommendDish() {
+    // Obtiene los valores de las respuestas
     var HoradeComer = document.getElementById("HoradeComer").value;
     var Hambre = document.getElementById("Hambre").value;
     var Queso = document.getElementById("Queso").value;
@@ -108,6 +110,7 @@ function recommendDish() {
     var dishName;
     var dishImageSrc;
 
+    // Recomienda un plato según las respuestas
     if (HoradeComer == "Desayuno" || HoradeComer == "Merienda") {
         if (Chocolate == "yes") {
             if (Tarta == "yes"){
@@ -184,6 +187,7 @@ function recommendDish() {
             }
         }
     }
+    // Muestra el nombre y la imagen del plato
     document.getElementById("dishImage").src = dishImageSrc;
     document.getElementById("dishName").textContent = dishName;
 
@@ -193,13 +197,12 @@ function recommendDish() {
     document.getElementById("dishName").style.display = "block";
     document.getElementById("dishImage").style.display = "block";
 
-    // Muestra el formulario y oculta la imagen y el nombre del plato después de 5 segundos
+    // Muestra el formulario y oculta la imagen y el nombre del plato después de 10 segundos
     setTimeout(function() {
         document.getElementById("foodForm").style.display = "block";
         document.getElementById("dishDisplay").style.display = "none";
         document.getElementById("dishName").style.display = "none";
         document.getElementById("dishImage").style.display = "none";
-    
     }, 10000);
 }
 

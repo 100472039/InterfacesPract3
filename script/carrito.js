@@ -1,6 +1,7 @@
 let productosCarrito = {};
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Variables para los pasos
     let paso1 = document.getElementById('paso1');
     let paso2 = document.getElementById('paso2');
     let paso2_2 = document.getElementById('paso2_2');
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     contenedorMigas[0].style.backgroundColor = '#dd1b2d';
     textomp[0].style.color = 'white';
 
+    // Variables para los botones de los pasos
     let paso1Selector = document.getElementById('paso1Selector');
     let paso2Selector = document.getElementById('paso2Selector');
     let paso22Selector = document.getElementById('boton-insertar');
@@ -24,15 +26,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let alergenossel = document.getElementById('alergenossel');
     let tituloinf = document.getElementById('titulo-apartado-inf');
 
-    let iconoCarrito = document.querySelector('label[for="btn-menu"]');
+    // Variables para el carrito
+    let iconoCarrito = document.getElementById('btn-menu');
     let menuCarrito = document.querySelector('#menu-carrito');
     let contenedorProductos = document.querySelector('#productos-carrito');
     let totalCarrito = document.querySelector('#total-carrito');
     let productosSeleccionados = [];
 
+
+    //Función que verifica si hay productos en el carrito
     function hayProductosEnCarrito() {
         return Object.keys(productosCarrito).length > 0;
     }
+    //Función que verifica que todos los campos estén completados
     function InputsCompletados() {
         if (verificarformatoTitular() == false ||verificarformatoTelefono() == false|| verificarformatoEmail() == false || 
         verificarformatoTarjeta()== false || verificarformatoFecha() == false ||  verificarformatoCVC() == false||
@@ -45,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let totalCarrito = document.querySelector('#total-carrito');
         let totalTexto = totalCarrito.textContent.replace('Total: ', '').replace('€', '');
         let total = parseFloat(totalTexto);
+        //Implementación de cupones
         cupon = document.getElementById("cupon").value;
             if(cupon){
                 if(cupon == "VIPS5"){
@@ -63,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     alert("Lo sentimos, no hay ningún cupón con ese código");
                 }
             }
+        // Comprobar si el usuario está registrado
         let email = document.getElementById("email").value;
         let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         const usuario_registrado = usuarios.find((usuario) => usuario.email == email);
@@ -99,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return true;
     }
     function verificarformatoTelefono(){
+        // Verifica el formato del teléfono
         let telefono = document.getElementById("telefono").value;
         let expresion = /^[0-9]{9}$/;
         if (telefono === "") {
@@ -115,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     function verificarformatoDireccion() {
+        // Verifica el formato de la dirección
         let direccionInput = document.getElementById("direccion");
         let direccion = direccionInput.value.trim(); 
         let regexDireccion = /^[a-zA-Z0-9\s]*$/; 
@@ -135,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
     function verificarformatoEmail(){
+        // Verifica el formato del email
         let email = document.getElementById("email").value;
         let expresion = /\w+@\w+\.+[a-z]/;
         if (email === "") {
@@ -151,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     function verificarformatoTitular(){
+        // Verifica el formato del titular
         let nombre = document.getElementById("titular").value;
         let regexNombre = /^[a-zA-Z\s]*$/; // Expresión regular para nombres que solo contienen letras y espacios
         if (nombre === "") {
@@ -167,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     function verificarformatoDireccion() {
+        // Verifica el formato de la dirección
         let direccionInput = document.getElementById("direccion");
         let direccion = direccionInput.value.trim(); 
         let regexDireccion = /^[a-zA-Z0-9\s]*\s[a-zA-Z0-9\s]*$/; 
@@ -185,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function verificarCodigoPostal() {
+        // Verifica el formato del código postal
         let codigoPostalInput = document.getElementById("postal");
         let codigoPostal = codigoPostalInput.value.trim();
         let regexCodigoPostal = /^\d{5}$/;
@@ -205,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
     function verificarformatoTarjeta(){
+        // V
         let tarjeta = document.getElementById("tarjeta").value;
         let expresion = /^[0-9]{16}$/;
         if (tarjeta === "") {
@@ -239,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function verificarformatoCVC(){
+        // Verifica el formato del cvc
         let cvc = document.getElementById("cvc").value;
         let expresion = /^[0-9]{3}$/;
         if (cvc === "") {
@@ -293,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function mostrarPaso22(event) {
+        //Continuación de campos de paso 2
         event.preventDefault();
         paso1.classList.remove('mostrar');
         paso2.classList.remove('mostrar');
@@ -310,6 +327,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     function mostrarPaso3(event) {
+        //El pedido se ha realizado con éxito, muestra la página
         event.preventDefault();
         if (InputsCompletados()) {
             paso1.classList.remove('mostrar');
@@ -326,11 +344,10 @@ document.addEventListener("DOMContentLoaded", function() {
             textomp[0].style.color = '#dd1b2d';
             let iconoCarrito = document.querySelector('.icono-menu');
             iconoCarrito.style.display = 'none';
-        } /* else {
-            alert('Por favor, completa todos los campos antes de continuar.');
-        } */
+        } 
     }
     function mostrarAlergenos(event) {
+        //Mostrar página de alérgenos
         event.preventDefault();
         paso1.classList.remove('mostrar');
         paso2.classList.remove('mostrar');
@@ -341,6 +358,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function mostrarMenuInfantil(event) {
+        //Mostrar el menu infantil
         event.preventDefault();
         paso1.classList.remove('mostrar');
         paso2.classList.remove('mostrar');
@@ -363,23 +381,23 @@ document.addEventListener("DOMContentLoaded", function() {
     alergenossel.addEventListener('click',mostrarAlergenos);
     tituloinf.addEventListener('click',mostrarMenuInfantil)
 
-
+    //Poder interaccionar con el icono del carrito, abriendo el carrito o cerrandolo
     iconoCarrito.addEventListener('click', function () {
         toggleCarrito();
     });
     
-    // Evento de clic en cualquier lugar del documento
+    // Al hacer click fuera del carrito se cierra
     document.addEventListener('click', function (event) {
         let target = event.target;
     
-        // Verificar si el clic no fue dentro del menú del carrito o en el icono del carrito
+        // Verificar si el click
         if (!menuCarrito.contains(target) && !iconoCarrito.contains(target)) {
             cerrarCarrito();
         }
     });
     
     function toggleCarrito() {
-        // Toggle entre mostrar y ocultar el menú del carrito
+        //Cerrar o abrir carrito
         if (menuCarrito.classList.contains('menu-visible')) {
             cerrarCarrito();
         } else {
@@ -388,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function abrirCarrito() {
+        //Muestra el carrito
         menuCarrito.classList.add('menu-visible');
         menuCarrito.classList.remove('menu-oculto');
         totalCarrito.classList.add('total-visible');
@@ -395,13 +414,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function cerrarCarrito() {
+        //Cierra el carrito se deja de ver
         menuCarrito.classList.remove('menu-visible');
         menuCarrito.classList.add('menu-oculto');
         totalCarrito.classList.remove('total-visible');
         totalCarrito.classList.add('total-oculto');
     }
     
-
+    //Botones de selección del menu-infantil
     let botonesSel = document.querySelectorAll('#boton-sel');
 
     botonesSel.forEach(boton => {
@@ -409,9 +429,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let producto = this.parentElement.querySelector('.producto');
             let nombreProducto = producto.querySelector('.nombre-producto').textContent;
             if (producto.style.border == '') {
+                //Cambiamos el borde a seleccionado
                 producto.style.border = '20px solid #dd1b2d';
                 productosSeleccionados.push(nombreProducto);
             } else {
+                //Quitamos borde de seleccionado
                 producto.style.border = '';
                 let index = productosSeleccionados.indexOf(nombreProducto);
                 if (index > -1) {
@@ -420,11 +442,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             let categoria = this.parentElement.parentElement;
+            //Solo permitir que un producto sea seleccionado de esa categoria
             let botonesEnLaMismaCategoria = categoria.querySelectorAll('.boton2');
             botonesEnLaMismaCategoria.forEach(botonEnLaMismaCategoria => {
                 if (botonEnLaMismaCategoria != this) { 
                     let producto = botonEnLaMismaCategoria.parentElement.querySelector('.producto');
                     let nombreProducto = producto.querySelector('.nombre-producto').textContent;
+                    //Si se selecciona otra se deselecciona el que había seleccionado
                     producto.style.border = '';
                     let index = productosSeleccionados.indexOf(nombreProducto);
                     if (index > -1) {
@@ -440,10 +464,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 botonAnadir.addEventListener('click', function() {
     if (productosSeleccionados.length < 3) {
+        // Añadir tres productos al menu infantil OBLIGATORIO
         alert('Por favor, selecciona tres productos antes de añadir el menú infantil.');
         return;
     }
     let nombreProducto = 'Menu Infantil: <br>' + productosSeleccionados.join('<br>');
+    //Coste fijo de 20
     let precioProducto = 20;
     if (productosCarrito[nombreProducto]) {
         productosCarrito[nombreProducto].cantidad++;
@@ -464,7 +490,7 @@ botonAnadir.addEventListener('click', function() {
 
 let botones = document.querySelectorAll('.boton');
 
-//Cuando añades un producto pulsando al boton añadir se añade al carrito
+// Cuando añades un producto pulsando al boton añadir se añade al carrito
 botones.forEach(boton => {
     boton.addEventListener('click', function() {
         let nombreProducto = this.parentElement.querySelector('.nombre-producto').textContent;
@@ -483,6 +509,7 @@ botones.forEach(boton => {
 });
 
 function eliminarProducto(nombreProducto) {
+    // Elimina un producto del carrito
     if (productosCarrito[nombreProducto]) {
         productosCarrito[nombreProducto].cantidad--;
 
@@ -495,9 +522,10 @@ function eliminarProducto(nombreProducto) {
 }
 
 function actualizarCarrito() {
+    // Actualiza el carrito
     contenedorProductos.innerHTML = '';
     let total = 0;
-
+    //Forma de impresión en el carrito
     for (let producto in productosCarrito) {
         let cantidad = productosCarrito[producto].cantidad;
         let precio = productosCarrito[producto].precio;
@@ -528,6 +556,7 @@ function actualizarCarrito() {
         contenedorProductos.appendChild(elementoProducto);
     }
     
+    // Actualiza el total
     totalCarrito.textContent = 'Total: ' + total + '€';
     
 }

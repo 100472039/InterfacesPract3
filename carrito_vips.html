@@ -5,13 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Alberto, Belen, Luis y Ana">
         <title>Carrito_Vips</title>
-        <link rel="stylesheet" href="estilos/pedido.css">
+        <link rel="stylesheet" href="style/pedido.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
         <link rel="icon" href="media/img/logo.jpg" type="image/jpg">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <!-- <script src="js/carrito.js"></script> -->
-
     </head>
 
     <body>
@@ -21,7 +19,7 @@
                 <div class="navbar-inner">
                   <a href=inicio.html>Inicio</a>
                   <a href=registro.html >Registro</a>
-                  <label for="btn-menu" class="icono-menu">🛒</label>
+                  <label id="btn-menu" class="icono-menu">🛒</label>
                 </div>
             </div>
             <div id="menu-carrito" class="menu-oculto">
@@ -48,51 +46,49 @@
                     </div>
                 </div>
             </nav>
-        <script src="js/carrito.js"></script>
+        <script src="script/carrito.js"></script>
         </header>
-        
-
         <main>
             <section class="paso mostrar" id="paso1">
                 <h4 id="comida_titulo" class="tituloPaso1">Comida a domicilio.</h4>
                 <img id="alergenossel" class="imagen-alergenos" src="media/img/alergenos.png" alt="Alergenos.">
-                <p class="descripcion">¡Ahora VIPS te lleva tus platos favoritos a domicilio!</p>
+                <p class= " descripcion">¡Ahora VIPS te lleva tus platos favoritos a domicilio!</p>
                 <div class="contenedor-titulos">
                     <h6 class="titulo-apartado">Entrantes.</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="Quesadillaconboton." data-alergenos="gluten">
+                    <div class="producto-boton" data-nombre-producto="Quesadillaconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Quesadilla.">
                             <div class="img-container-product">
                                 <img src="media/img/quesadilla.jpg" alt="Quesadilla.">
                                 <p class="precio-producto">7€</p>
                             </div>
                             <h2 class="nombre-producto">Quesadilla.</h2>
-                            <p class="descripcion-producto">Dos tortillas de harina de trigo, jamón York, queso Cheddar fundido, pico de gallo, crema.</p>
+                            <p class= " descripcion-producto">Dos tortillas de harina de trigo, jamón York, queso Cheddar fundido, pico de gallo, crema.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="Nachosconboton."data-alergenos="gluten">
+                    <div class="producto-boton" data-nombre-producto="Nachosconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Nachos Tex Mex.">
                             <div class="img-container-product">
                                 <img src="media/img/nachos.jpg" alt="Nachos Tex Mex.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Nachos Tex Mex.</h2>
-                            <p class="descripcion-producto">Nachos de maíz, mezcla de quesos, cebolla roja, chorizo picado, chiles jalapeños, cilantro y crema agria.</p>
+                            <p class= " descripcion-producto">Nachos de maíz, mezcla de quesos, cebolla roja, chorizo picado, chiles jalapeños, cilantro y crema agria.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                     <div class="producto-boton"data-nombre-producto="Alitasconboton."data-alergenos="frutos_secos">                
+                     <div class="producto-boton" data-nombre-producto="Alitasconboton." data-alergenos="frutos_secos">                
                         <div class="producto" data-nombre-producto="Alitas Chilli BBQ.">
                             <div class="img-container-product">
                                 <img src="media/img/alitas.png" alt="Alitas Chilli BBQ.">
                                 <p class="precio-producto">9€</p>
                             </div>
                             <h2 class="nombre-producto">Alitas Chilli BBQ.</h2>
-                            <p class="descripcion-producto">Alitas de pollo marinadas en salsa BBQ Chipotle y salsa sweet chili sobre patatas fritas, acompañadas de salsa ranch.</p>
+                            <p class= " descripcion-producto">Alitas de pollo marinadas en salsa BBQ Chipotle y salsa sweet chili sobre patatas fritas, acompañadas de salsa ranch.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
@@ -101,76 +97,76 @@
                     <h6 class="titulo-apartado">Sandwiches</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="Pastramiconboton."data-alergenos="gluten">
+                    <div class="producto-boton" data-nombre-producto="Pastramiconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Pastrami.">
                             <div class="img-container-product">
                                 <img src="media/img/pastrami.jpg" alt="Pastrami.">
                                 <p class="precio-producto">12€</p>
                             </div>
                             <h2 class="nombre-producto">Pastrami.</h2>
-                            <p class="descripcion-producto">Pastrami de vacuno cocinado a baja temperatura estilo New York, queso cheddar ahumado y pimiento verde frito.</p>
+                            <p class= " descripcion-producto">Pastrami de vacuno cocinado a baja temperatura estilo New York, queso cheddar ahumado y pimiento verde frito.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="CachoPowerconboton."data-alergenos="gluten">
+                    <div class="producto-boton" data-nombre-producto="CachoPowerconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="CachoPower.">
                             <div class="img-container-product">
                                 <img src="media/img/cachopower.jpg" alt="CachoPowerx.">
                                 <p class="precio-producto">13€</p>
                             </div>
                             <h2 class="nombre-producto">CachoPower.</h2>
-                            <p class="descripcion-producto">Cachopo relleno de carne, jamón serrano, queso y pimiento del piquillo, huevo frito, guindilla verde y  lechuga.</p>
+                            <p class= " descripcion-producto">Cachopo relleno de carne, jamón serrano, queso y pimiento del piquillo, huevo frito, guindilla verde y  lechuga.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
                     
 
-                    <div class="producto-boton"data-nombre-producto= "Cubanoconboton."data-alergenos="gluten">                
+                    <div class="producto-boton " data-nombre-producto= "Cubanoconboton." data-alergenos="gluten">                
                         <div class="producto" data-nombre-producto=" Cubano.">
                             <div class="img-container-product">
                                 <img src="media/img/cubano.jpg" alt=" Cubano.">
                                 <p class="precio-producto">12€</p>
                             </div>
                             <h2 class="nombre-producto">Cubano.</h2>
-                            <p class="descripcion-producto">Pulled pork, queso emmental y queso fundido, jamón cocido, mostaza, mayonesa y pepinillo, en pan maíz.</p>
+                            <p class= " descripcion-producto">Pulled pork, queso emmental y queso fundido, jamón cocido, mostaza, mayonesa y pepinillo, en pan maíz.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="VIPSClubaconboton.">
+                    <div class="producto-boton " data-nombre-producto="VIPSClubaconboton.">
                         <div class="producto" data-nombre-producto="VIPSClub.">
                             <div class="img-container-product">
                                 <img src="media/img/VIPSClub.jpg" alt="VIPSClub.">
                                 <p class="precio-producto">10€</p>
                             </div>
                             <h2 class="nombre-producto">VIPSClub.</h2>
-                            <p class="descripcion-producto">Pan blanco o pan de semillas, tres pisos de pollo, bacon, jamón York, queso americano y queso, mayonesa, tomate y lechuga.</p>
+                            <p class= " descripcion-producto">Pan blanco o pan de semillas, tres pisos de pollo, bacon, jamón York, queso americano y queso, mayonesa, tomate y lechuga.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="clubsalmonconboton.">
+                    <div class="producto-boton " data-nombre-producto="clubsalmonconboton.">
                         <div class="producto" data-nombre-producto="Club Salmon.">
                             <div class="img-container-product">
                                 <img src="media/img/salmon.png" alt="Club Salmon.">
                                 <p class="precio-producto">15€</p>
                             </div>
                             <h2 class="nombre-producto">Club Salmon.</h2>
-                            <p class="descripcion-producto">Pan rústico de cereales y semillas con salmón ahumado noruego, aguacate, tomate, cebolla roja, lechuga y salsa mostaza y miel.</p>
+                            <p class= " descripcion-producto">Pan rústico de cereales y semillas con salmón ahumado noruego, aguacate, tomate, cebolla roja, lechuga y salsa mostaza y miel.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
                     
 
-                    <div class="producto-boton"data-nombre-producto="FundyClockconboton.">                
+                    <div class="producto-boton " data-nombre-producto="FundyClockconboton.">                
                         <div class="producto" data-nombre-producto="FundyClock.">
                             <div class="img-container-product">
                                 <img src="media/img/oclock.png" alt="Fundy OClock.">
                                 <p class="precio-producto">7€</p>
                             </div>
                             <h2 class="nombre-producto">Fundy OClock.</h2>
-                            <p class="descripcion-producto">Pan rústico, jamón York, pavo cocido, huevos revueltos y queso Cheddar fundido. Complemento a elegir; patatas o aros de cebolla.</p>
+                            <p class= " descripcion-producto">Pan rústico, jamón York, pavo cocido, huevos revueltos y queso Cheddar fundido. Complemento a elegir; patatas o aros de cebolla.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
@@ -185,10 +181,10 @@
                         <div class="texto-producto">
                             <h2 class="nombre-producto">VIPSKentucky.</h2>
                             <p class="precio-producto">20€</p>
-                            <p class="descripcion-producto">No podíamos dejarte con las ganas, y hemos traído de vuelta la especialidad de la casa, la joya de la corona, el manjar de ricos y energúmenos:</p>
+                            <p class= " descripcion-producto">No podíamos dejarte con las ganas, y hemos traído de vuelta la especialidad de la casa, la joya de la corona, el manjar de ricos y energúmenos:</p>
                         </div>
                         <div class="contenedor-descr">
-                            <p class="descripcion-producto">Una combinación de carne de cerdo troceada y queso que, unido a la salsa secreta, lo convierte en el sándwich
+                            <p class= " descripcion-producto">Una combinación de carne de cerdo troceada y queso que, unido a la salsa secreta, lo convierte en el sándwich
                                 perfecto. Disfrutadlo mientras podáis.</p>
                         </div>
                     </div>
@@ -196,51 +192,51 @@
                 </div>
                 <h5 class="titulovuelta">MENU INFANTIL</h5>
                 <div class="contenedor-infantil">
-                    <p class="descripcion-producto-inf">¡Para que los más peques tambien disfruten!</p>
+                    <p class= " descripcion-producto-inf">¡Para que los más peques tambien disfruten!</p>
                     <div class="contenedor-menuinf">
                         <img src="media/img/menu_infantil.jpg" alt="Infantil.">
-                        <h6 id="titulo-apartado-inf"class="titulo-apartado">Menu Infantil.</h6>
+                        <h6 id="titulo-apartado-inf" class="titulo-apartado">Menu Infantil.</h6>
                     </div>
-                    <p class="descripcion-producto-inf">Haga click en el recuadro de menu infantil para poder verlo</p>
+                    <p class= " descripcion-producto-inf">Haga click en el recuadro de menu infantil para poder verlo</p>
                     <p class="precio-producto-inf">10€</p>
                 </div>
                 <div class="contenedor-titulos">
                     <h6 class="titulo-apartado">Hamburguesas.</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="LaBurratisimaconboton."data-alergenos="huevo">
+                    <div class="producto-boton " data-nombre-producto="LaBurratisimaconboton." data-alergenos="huevo">
                         <div class="producto" data-nombre-producto="LaBurratisimaa.">
                             <div class="img-container-product">
                                 <img src="media/img/BURRATA.png" alt="LaBurratisimaa.">
                                 <p class="precio-producto">15€</p>
                             </div>
                             <h2 class="nombre-producto">La Burratisima.</h2>
-                            <p class="descripcion-producto">Carne de vacuno con cremosa burrata, paleta ibérica crujiente, pesto toscano, pomodoro seco, tomate, rúcula y mayonesa.</p>
+                            <p class= " descripcion-producto">Carne de vacuno con cremosa burrata, paleta ibérica crujiente, pesto toscano, pomodoro seco, tomate, rúcula y mayonesa.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="ChicChickenconboton.">
+                    <div class="producto-boton " data-nombre-producto="ChicChickenconboton.">
                         <div class="producto" data-nombre-producto="Chic Chicken.">
                             <div class="img-container-product">
                                 <img src="media/img/BBQ.png" alt="Chic Chicken.">
                                 <p class="precio-producto">14€</p>
                             </div>
                             <h2 class="nombre-producto">Chic Chicken BBQ.</h2>
-                            <p class="descripcion-producto">Pollo crujiente, salsa BBQ chipotle sobre tomate, lechuga, pepinillo y salsa baconesa en pan brioche tostado.</p>
+                            <p class= " descripcion-producto">Pollo crujiente, salsa BBQ chipotle sobre tomate, lechuga, pepinillo y salsa baconesa en pan brioche tostado.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
                     
 
-                     <div class="producto-boton"data-nombre-producto="VeganBurguerconboton.">                
+                     <div class="producto-boton " data-nombre-producto="VeganBurguerconboton.">                
                         <div class="producto" data-nombre-producto="VeganBurguer.">
                             <div class="img-container-product">
                                 <img src="media/img/VEGAN.jpg" alt="VeganBurguer.">
                                 <p class="precio-producto">17€</p>
                             </div>
                             <h2 class="nombre-producto">Vegan Burguer.</h2>
-                            <p class="descripcion-producto">Hamburguesa vegana de quinoa, zanahoria y puerro con aguacate, pimientos asados, salsa sweet chili y tomate.</p>
+                            <p class= " descripcion-producto">Hamburguesa vegana de quinoa, zanahoria y puerro con aguacate, pimientos asados, salsa sweet chili y tomate.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
@@ -249,40 +245,40 @@
                     <h6 class="titulo-apartado">Postres.</h6>
                 </div>
                 <div id="contenedor-postres" class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="Choco&Caramel.">
+                    <div class="producto-boton " data-nombre-producto="Choco&Caramel.">
                         <div class="producto" data-nombre-producto="Choco&Caramel.">
                             <div class="img-container-product">
                                 <img src="media/img/tartaa.png" alt="Choco&Caramel.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Choco&Caramel.</h2>
-                            <p class="descripcion-producto">Esponjoso bizcocho con mousse de caramelo, crema de caramelo salado y recubierto de bombón.</p>
+                            <p class= " descripcion-producto">Esponjoso bizcocho con mousse de caramelo, crema de caramelo salado y recubierto de bombón.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="Tortitasconboton."data-alergenos="frutos_secos">
+                    <div class="producto-boton " data-nombre-producto="Tortitasconboton." data-alergenos="frutos_secos">
                         <div class="producto" data-nombre-producto="TortitasVIPS.">
                             <div class="img-container-product">
                                 <img src="media/img/tortitas.png" alt="TortitasVIPS.">
                                 <p class="precio-producto">4€</p>
                             </div>
                             <h2 class="nombre-producto">Tortitas VIPS.</h2>
-                            <p class="descripcion-producto">Tortitas recién hechas con nata montada VIPS y sirope de chocolate, caramelo o fresa.</p>
+                            <p class= " descripcion-producto">Tortitas recién hechas con nata montada VIPS y sirope de chocolate, caramelo o fresa.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
                     
 
-                     <div class="producto-boton"data-nombre-producto="Batidosconboton.">                
+                     <div class="producto-boton" data-nombre-producto="Batidosconboton.">                
                         <div class="producto" data-nombre-producto="Batidos.">
                             <div class="img-container-product">
                                 <img src="media/img/batidos.png" alt="Batidos.">
                                 <p class="precio-producto">3€</p>
                             </div>
                             <h2 class="nombre-producto">Batidos Vips.</h2>
-                            <p class="descripcion-producto">Elige tu batido.</p>
-                            <p class="descripcion-producto">Chocolate, caramelo o fresa.</p>
+                            <p class= " descripcion-producto">Elige tu batido.</p>
+                            <p class= " descripcion-producto">Chocolate, caramelo o fresa.</p>
                         </div>
                         <div class="boton">AÑADIR</div>
                     </div>
@@ -293,8 +289,8 @@
                 <h4 id="info-titulo" class="tituloPaso1">Información De Entrega.</h4>
                 <div class="columna-titulos">
                     <div class="contenedor-paso2">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" class="campo-entrada" id="direccion" placeholder="Introduce tu dirección">
+                        <label for= "direccion">Dirección</label>
+                        <input type="text" class="campo-entrada" id= "direccion" placeholder="Introduce tu dirección">
                     </div>
                     <div class="contenedor-paso2">
                         <label for="postal">Código Postal</label>
@@ -310,7 +306,7 @@
                 </div>
             </section>
             <section class="paso" id="paso2_2">
-                <h4 id="titulopago"class="tituloPaso1">Información de Pago y Contacto.</h4>
+                <h4 id="titulopago" class="tituloPaso1">Información de Pago y Contacto.</h4>
                 <div class="columna-titulos">
                     <div class="contenedor-paso2">
                         <label for="titular">Titular</label>
@@ -344,6 +340,7 @@
                         <label for="cupon">¿Tienes algún cupón?</label>
                         <input type="text" class="campo-entrada" id="cupon" placeholder="Introduce el código del cupón">
                 </div>
+                </div>
                 <div class="contenedor-boton-pago">
                     <div id="boton-pago3" class="boton">Confirmar pedido</div>
                     <div id="boton-pago4" class="boton">Añadir platos</div>
@@ -359,134 +356,134 @@
             <section class="paso" id="alergenos">
                 <h4 class="tituloPaso1">Selecciona tus alergias.</h4>
                 <div class="contenedor-alergias-sel">
-                    <img src="media/img/frutos_secos.png" alt="Frutos."data-alergenos="frutos_secos">
+                    <img src="media/img/frutos_secos.png" alt="Frutos. " data-alergenos="frutos_secos">
                     <img src="media/img/gluten.png" alt="Gluten." data-alergenos="gluten">
-                    <img src="media/img/huevo.png" alt="Huevo."data-alergenos="huevo">
+                    <img src="media/img/huevo.png" alt="Huevo. " data-alergenos="huevo">
 
                 </div>
             </section>
             <section class="paso" id="menu_infantil">
-                <h4 id="menuinf_titulo"class="tituloPaso1">MENU INFANTIL.</h4>
+                <h4 id="menuinf_titulo" class="tituloPaso1">MENU INFANTIL.</h4>
                 <div class="contenedor-titulos">
                     <h6 class="titulo-apartado">ENTRANTES.</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="Fingersconboton.">
+                    <div class="producto-boton " data-nombre-producto="Fingersconboton.">
                         <div class="producto" data-nombre-producto="Fingers.">
                             <div class="img-container-product">
                                 <img src="media/img/fingers.png" alt="Fingers.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Fingers.</h2>
-                            <p class="descripcion-producto">Fingers de pollo Cornflakes con salsa BBQ Chipotle y salsa Mostaza & Miel.Seis unidades.</p>
+                            <p class= " descripcion-producto">Fingers de pollo Cornflakes con salsa BBQ Chipotle y salsa Mostaza & Miel.Seis unidades.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="Quesadillaconboton." data-alergenos="gluten">
+                    <div class="producto-boton " data-nombre-producto="Quesadillaconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Quesadilla.">
                             <div class="img-container-product">
                                 <img src="media/img/quesadilla.jpg" alt="Quesadilla.">
                                 <p class="precio-producto">7€</p>
                             </div>
                             <h2 class="nombre-producto">Quesadilla.</h2>
-                            <p class="descripcion-producto">Dos tortillas de harina de trigo, jamón York, queso Cheddar fundido, pico de gallo, crema.</p>
+                            <p class= " descripcion-producto">Dos tortillas de harina de trigo, jamón York, queso Cheddar fundido, pico de gallo, crema.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
                     
 
-                    <div class="producto-boton"data-nombre-producto="Nachosconboton."data-alergenos="gluten">
+                    <div class="producto-boton " data-nombre-producto="Nachosconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Nachos Tex Mex.">
                             <div class="img-container-product">
                                 <img src="media/img/nachos.jpg" alt="Nachos Tex Mex.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Nachos Tex Mex.</h2>
-                            <p class="descripcion-producto">Nachos de maíz, mezcla de quesos, cebolla roja, chorizo picado, chiles jalapeños, cilantro y crema agria.</p>
+                            <p class= " descripcion-producto">Nachos de maíz, mezcla de quesos, cebolla roja, chorizo picado, chiles jalapeños, cilantro y crema agria.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
                 </div>
                 <div class="contenedor-titulos">
                     <h6 class="titulo-apartado">PRINCIPALES.</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="ChicChickenconboton.">
+                    <div class="producto-boton " data-nombre-producto="ChicChickenconboton.">
                         <div class="producto" data-nombre-producto="Chic Chicken.">
                             <div class="img-container-product">
                                 <img src="media/img/BBQ.png" alt="Chic Chicken.">
                                 <p class="precio-producto">14€</p>
                             </div>
                             <h2 class="nombre-producto">Chic Chicken BBQ.</h2>
-                            <p class="descripcion-producto">Pollo crujiente, salsa BBQ chipotle sobre tomate, lechuga, pepinillo y salsa baconesa en pan brioche tostado.</p>
+                            <p class= " descripcion-producto">Pollo crujiente, salsa BBQ chipotle sobre tomate, lechuga, pepinillo y salsa baconesa en pan brioche tostado.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="VIPSClubaconboton.">
+                    <div class="producto-boton " data-nombre-producto="VIPSClubaconboton.">
                         <div class="producto" data-nombre-producto="VIPSClub.">
                             <div class="img-container-product">
                                 <img src="media/img/VIPSClub.jpg" alt="VIPSClub.">
                                 <p class="precio-producto">10€</p>
                             </div>
                             <h2 class="nombre-producto">VIPSClub.</h2>
-                            <p class="descripcion-producto">Pan blanco o pan de semillas, tres pisos de pollo, bacon, jamón York, queso americano y queso, mayonesa.</p>
+                            <p class= " descripcion-producto">Pan blanco o pan de semillas, tres pisos de pollo, bacon, jamón York, queso americano y queso, mayonesa.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
                     
 
-                    <div class="producto-boton"data-nombre-producto="Pizzaconboton."data-alergenos="gluten">
+                    <div class="producto-boton " data-nombre-producto="Pizzaconboton." data-alergenos="gluten">
                         <div class="producto" data-nombre-producto="Pizza Margarita.">
                             <div class="img-container-product">
                                 <img src="media/img/pizza.png" alt="Pizza Margarita.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Pizza Margarita</h2>
-                            <p class="descripcion-producto">Queso mozzarella y orégano sobre una base de pan de focaccia con salsa de tomate.</p>
+                            <p class= " descripcion-producto">Queso mozzarella y orégano sobre una base de pan de focaccia con salsa de tomate.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
                 </div>
                 <div class="contenedor-titulos">
                     <h6 class="titulo-apartado">POSTRES.</h6>
                 </div>
                 <div class="contenedor-producto">
-                    <div class="producto-boton"data-nombre-producto="BatidoOreoconboton.">
+                    <div class="producto-boton " data-nombre-producto="BatidoOreoconboton.">
                         <div class="producto" data-nombre-producto="Batido Oreo.">
                             <div class="img-container-product">
                                 <img src="media/img/oreo.png" alt="Batido Oreo.">
                                 <p class="precio-producto">14€</p>
                             </div>
                             <h2 class="nombre-producto">Batido Oreo.</h2>
-                            <p class="descripcion-producto">Batido de helado de chocolate blanco, galletas Oreo y nata montada VIPS.</p>
+                            <p class= " descripcion-producto">Batido de helado de chocolate blanco, galletas Oreo y nata montada VIPS.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="TortitasChipsconboton.">
+                    <div class="producto-boton " data-nombre-producto="TortitasChipsconboton.">
                         <div class="producto" data-nombre-producto="TortitasChips.">
                             <div class="img-container-product">
                                 <img src="media/img/tortitaschips.png" alt="TortitasChips.">
                                 <p class="precio-producto">10€</p>
                             </div>
                             <h2 class="nombre-producto">Tortitas Chips.</h2>
-                            <p class="descripcion-producto">Tortitas recién hechas rellenas de Chips Ahoy® y estrellitas de chocolate blanco.</p>
+                            <p class= " descripcion-producto">Tortitas recién hechas rellenas de Chips Ahoy® y estrellitas de chocolate blanco.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
 
-                    <div class="producto-boton"data-nombre-producto="Choco&Caramel.">
+                    <div class="producto-boton " data-nombre-producto="Choco&Caramel.">
                         <div class="producto" data-nombre-producto="Choco&Caramel.">
                             <div class="img-container-product">
                                 <img src="media/img/tartaa.png" alt="Choco&Caramel.">
                                 <p class="precio-producto">6€</p>
                             </div>
                             <h2 class="nombre-producto">Choco&Caramel.</h2>
-                            <p class="descripcion-producto">Esponjoso bizcocho con mousse de caramelo y recubierto de bombón.</p>
+                            <p class= " descripcion-producto">Esponjoso bizcocho con mousse de caramelo y recubierto de bombón.</p>
                         </div>
-                        <div id="boton-sel" class="boton2">SELECCIONAR</div>
+                        <div class="boton-sel boton2">SELECCIONAR</div>
                     </div>
                 </div>
             
@@ -516,5 +513,5 @@
             </div>
         </footer>
         
-    <script src="js/carrito.js"></script>
+    <script src="script/carrito.js"></script>
     </body>

@@ -1,3 +1,4 @@
+// Abre el menú de la barra de nacegación
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-menu-open').addEventListener('click', function() {
         abrirMenu();
@@ -31,8 +32,10 @@ function cerrarMenu() {
     }
 }
 document.addEventListener('DOMContentLoaded', function() {   
+    //lista de los meses del años
     let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October', 'November', 'December'];
 
+    //variables 
     let currentDate = new Date();
     let currentDay = currentDate.getDate();
     let monthNumber = currentDate.getMonth();
@@ -55,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const writeMonth = (month) => {
+        //muestra el mes del calendario. Para ello tiene que calcular los días totales del mes
         let today = new Date();
         today.setHours(0, 0, 0, 0); 
     
@@ -63,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${getTotalDays(monthNumber-1)-(i-1)}
             </div>`;
         }
-    
+        //si el día es posterior al día actual no se puede seleccionar y se mostrará en negro
         for(let i=1; i<=getTotalDays(month); i++){
             let date = new Date(currentYear, monthNumber, i);
             if (date < today) {
@@ -75,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.selectDay = (element, day) => {
+        //si se selecciona un día se le camvbia el estilo
         selectedDay = day;
         if(selectedDayElement) {
             selectedDayElement.classList.remove('calendar__today');  // Restablecer el estilo del día anteriormente seleccionado
@@ -83,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedDayElement.classList.add('calendar__today');  // Cambiar el estilo del día seleccionado
     }
     const getTotalDays = month => {
+        //se obtienen los días de cada mes en función de la posicion de en la que están en la lista.
+        //también se comprueba si el año es bisiesto
         if(month === -1) month = 11;
 
         if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
@@ -136,12 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
         writeMonth(monthNumber);
     }
     let restauranteSeleccionado = null;
-    let mapa = L.map('mapa').setView([40.435518, -3.710789], 13); // Coordenadas de Madrid
+    let mapa = L.map('mapa').setView([40.435518, -3.710789], 13); // Se crea un mapa con las coordenadas de Madrid
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
     }).addTo(mapa);
 
+    //Hemos añadidio runos restaurantes obteniendo sus posiciones desde google maps
     let restaurantes = [
         { nombre: 'Av. de Euskadi, 1, 28917 Leganés, Madrid', latitud: 40.359575250820996,  longitud: -3.776685816751896 },
         { nombre: 'Prta del Sol, 3, 28013 Madrid', latitud: 40.41963580625915,   longitud: -3.7033209114436487 },
@@ -193,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
         EnviarReserva();
     });
     document.getElementById("boton_cercano").addEventListener("click", function() {
+        //si se pulsa este botón se obtiene la dirección del usuario y se calcula el restaurante más cercano
         navigator.geolocation.getCurrentPosition(function(position) {
             let latitudUsuario = position.coords.latitude;
             let longitudUsuario = position.coords.longitude;
@@ -226,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
     }
     const EnviarReserva = () => {
+        //Si todos los datos son correctos se envía la reserva
         if ( verificarformatoDireccion() === false || verificarformatoNumeroPersonas() == false || verificarformatoHora() === false||verificarformatoNombre() === false || verificarformatoTelefono() === false|| verificarformatoEmail() === false    ){
             return;
         };
@@ -259,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function verificarformatoEmail(){
         let email = document.getElementById("email").value;
-        let expresion = /\w+@\w+\.+[a-z]/;
+        let expresion = /\w+@\w+\.+[a-z]/;// Expresión regular para el correo
         if (email === "") {
             document.getElementById("email").style.border = "2px solid red";
             alert("El campo email esta vacio");
@@ -275,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function verificarformatoTelefono(){
         let telefono = document.getElementById("telefono").value;
-        let expresion = /^[0-9]{9}$/;
+        let expresion = /^[0-9]{9}$/; // Expresión regular para el telefono
         if (telefono === "") {
             document.getElementById("telefono").style.border = "2px solid red";
             alert("El campo telefono esta vacio");
@@ -306,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function verificarformatoDireccion(){
+        //Si se introduce una direccion solo puede ser una de las que está en el mapa
         if (restauranteSeleccionado){
             return true
         }

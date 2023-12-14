@@ -33,6 +33,9 @@ p{
 .boton a{
     font: "Hahmlet-Black", "Hahmlet";
 }
+.boton_r a{
+    font: "Hahmlet-Black", "Hahmlet";
+}
 .pagina {
     border-radius: 3px;
     padding: 10px;
@@ -47,6 +50,29 @@ p{
 .pagina .contacto
 {
     width: 100%;
+}
+.boton_r {
+    width: 40%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: 2px solid var(--color-blanco);
+    cursor: pointer;
+    font: "Hahmlet-Black", "Hahmlet";
+    background: var(--color-rojo);
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+}
+.boton_r:hover {
+    color: var(--color-rojo);
+    border: 2px solid var(--color-rojo);
+    background: var(--color-blanco-sucio);
+}
+
+.boton_r:active {
+    transform: scale(0.9);
 }
 
 .col_t1 {
