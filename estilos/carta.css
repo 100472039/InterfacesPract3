@@ -95,16 +95,7 @@ body {
     transform: translateX(100%);
     right:0;
 }
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
+
 #btn-menu-open:checked ~ .container-menu .cont-menu,
 #btn-menu-close:checked ~ .container-menu .cont-menu {
     transform: translateX(0%);

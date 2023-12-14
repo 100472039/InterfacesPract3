@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     function InputsCompletados() {
         if (verificarformatoTitular() == false ||verificarformatoTelefono() == false|| verificarformatoEmail() == false || 
-        verificarformatoTarjeta()== false || verificarformatoFecha() == false ||  verificarformatoCVC() == false) {
+        verificarformatoTarjeta()== false || verificarformatoFecha() == false ||  verificarformatoCVC() == false||
+        verificarformatoDireccion() == false || verificarCodigoPostal== false) {
             return false;
         }
         // Lista de usuarios
@@ -113,6 +114,25 @@ document.addEventListener("DOMContentLoaded", function() {
             return true;
         }
     }
+    function verificarformatoDireccion() {
+        let direccionInput = document.getElementById("direccion");
+        let direccion = direccionInput.value.trim(); 
+        let regexDireccion = /^[a-zA-Z0-9\s]*$/; 
+    
+        if (direccion === "") {
+            direccionInput.style.border = "2px solid red";
+            alert("El campo dirección está vacío");
+            return false;
+        } else if (!regexDireccion.test(direccion)) {
+            direccionInput.style.border = "2px solid red";
+            alert("La dirección solo debe contener letras, números y espacios");
+            return false;
+        } else {
+            direccionInput.style.border = "2px solid green";
+            return true;
+        }
+    }
+    
     
     function verificarformatoEmail(){
         let email = document.getElementById("email").value;
@@ -146,22 +166,44 @@ document.addEventListener("DOMContentLoaded", function() {
             return true;
         }
     }
-    function verificarformatoDireccion(){
-        let nombre = document.getElementById("direccion").value;
-        let regexNombre = /^[a-zA-Z0-9\s]*$/; // Expresión regular para nombres que solo contienen letras y espacios
-        if (nombre === "") {
-            document.getElementById("titular").style.border = "2px solid red";
-            alert("El campo direccion esta vacio");
+    function verificarformatoDireccion() {
+        let direccionInput = document.getElementById("direccion");
+        let direccion = direccionInput.value.trim(); 
+        let regexDireccion = /^[a-zA-Z0-9\s]*\s[a-zA-Z0-9\s]*$/; 
+        if (direccion === "") {
+            direccionInput.style.border = "2px solid red";
+            alert("El campo dirección está vacío");
             return false;
-        } else if (!regexNombre.test(nombre)) {
-            document.getElementById("direccion").style.border = "2px solid red";
-            alert("La direccion solo debe contener letras, numeros y espacios");
+        } else if (!regexDireccion.test(direccion)) {
+            direccionInput.style.border = "2px solid red";
+            alert("La dirección debe contener al menos dos espacios");
             return false;
         } else {
-            document.getElementById("direccion").style.border = "2px solid green";
+            direccionInput.style.border = "2px solid green";
             return true;
         }
     }
+
+    function verificarCodigoPostal() {
+        let codigoPostalInput = document.getElementById("postal");
+        let codigoPostal = codigoPostalInput.value.trim();
+        let regexCodigoPostal = /^\d{5}$/;
+    
+        if (codigoPostal === "") {
+            codigoPostalInput.style.border = "2px solid red";
+            alert("El campo código postal está vacío");
+            return false;
+        } else if (!regexCodigoPostal.test(codigoPostal)) {
+            codigoPostalInput.style.border = "2px solid red";
+            alert("Formato de código postal incorrecto. Debe tener cinco dígitos.");
+            return false;
+        } else {
+            codigoPostalInput.style.border = "2px solid green";
+            return true;
+        }
+    }
+    
+    
     function verificarformatoTarjeta(){
         let tarjeta = document.getElementById("tarjeta").value;
         let expresion = /^[0-9]{16}$/;
@@ -269,7 +311,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     function mostrarPaso3(event) {
         event.preventDefault();
-        // Sólo muestra el paso 3 si se ha completado la información de los inputs
         if (InputsCompletados()) {
             paso1.classList.remove('mostrar');
             paso2.classList.remove('mostrar');
@@ -283,6 +324,8 @@ document.addEventListener("DOMContentLoaded", function() {
             textomp[2].style.color = 'white';
             contenedorMigas[0].style.backgroundColor = 'white';
             textomp[0].style.color = '#dd1b2d';
+            let iconoCarrito = document.querySelector('.icono-menu');
+            iconoCarrito.style.display = 'none';
         } /* else {
             alert('Por favor, completa todos los campos antes de continuar.');
         } */
@@ -320,23 +363,43 @@ document.addEventListener("DOMContentLoaded", function() {
     alergenossel.addEventListener('click',mostrarAlergenos);
     tituloinf.addEventListener('click',mostrarMenuInfantil)
 
-/* });
- */
-/* document.addEventListener('DOMContentLoaded', function() { */
-    iconoCarrito.addEventListener('click', function() {
-        // Cuando se hace click en el icono del carrito, muestra u oculta el menú del carrito
-        if (menuCarrito.classList.contains('menu-visible')) {
-            menuCarrito.classList.remove('menu-visible');
-            menuCarrito.classList.add('menu-oculto');
-            totalCarrito.classList.remove('total-visible');
-            totalCarrito.classList.add('total-oculto');
-        } else {
-            menuCarrito.classList.add('menu-visible');
-            menuCarrito.classList.remove('menu-oculto');
-            totalCarrito.classList.add('total-visible');
-            totalCarrito.classList.remove('total-oculto');
+
+    iconoCarrito.addEventListener('click', function () {
+        toggleCarrito();
+    });
+    
+    // Evento de clic en cualquier lugar del documento
+    document.addEventListener('click', function (event) {
+        let target = event.target;
+    
+        // Verificar si el clic no fue dentro del menú del carrito o en el icono del carrito
+        if (!menuCarrito.contains(target) && !iconoCarrito.contains(target)) {
+            cerrarCarrito();
         }
     });
+    
+    function toggleCarrito() {
+        // Toggle entre mostrar y ocultar el menú del carrito
+        if (menuCarrito.classList.contains('menu-visible')) {
+            cerrarCarrito();
+        } else {
+            abrirCarrito();
+        }
+    }
+    
+    function abrirCarrito() {
+        menuCarrito.classList.add('menu-visible');
+        menuCarrito.classList.remove('menu-oculto');
+        totalCarrito.classList.add('total-visible');
+        totalCarrito.classList.remove('total-oculto');
+    }
+    
+    function cerrarCarrito() {
+        menuCarrito.classList.remove('menu-visible');
+        menuCarrito.classList.add('menu-oculto');
+        totalCarrito.classList.remove('total-visible');
+        totalCarrito.classList.add('total-oculto');
+    }
     
 
     let botonesSel = document.querySelectorAll('#boton-sel');
@@ -374,14 +437,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let botonAnadir = document.querySelector('#boton-menuanadir');
 
-    // Cuando añades el menú infantil pulsando al botón añadir, se añadirá al carrito con precio fijo de 20€ y se mostrarán los productos seleccionados
-    botonAnadir.addEventListener('click', function() {
-        if (productosSeleccionados.length < 3) {
-            alert('Por favor, selecciona tres productos antes de añadir el menú infantil.');
-            return;
-        }
-        let nombreProducto = 'Menu Infantil: <br>' + productosSeleccionados.join('<br>');
-        let precioProducto = 20;
+
+botonAnadir.addEventListener('click', function() {
+    if (productosSeleccionados.length < 3) {
+        alert('Por favor, selecciona tres productos antes de añadir el menú infantil.');
+        return;
+    }
+    let nombreProducto = 'Menu Infantil: <br>' + productosSeleccionados.join('<br>');
+    let precioProducto = 20;
+    if (productosCarrito[nombreProducto]) {
+        productosCarrito[nombreProducto].cantidad++;
+    } else {
+        productosCarrito[nombreProducto] = {
+            cantidad: 1,
+            precio: precioProducto
+        };
+    }
+
+    // Resetea el borde del contenedor y la lista de productos seleccionados
+    botonesSel.forEach(boton => {
+        boton.parentElement.querySelector('.producto').style.border = '';
+    });
+    productosSeleccionados = [];
+    actualizarCarrito();
+});
+
+let botones = document.querySelectorAll('.boton');
+
+//Cuando añades un producto pulsando al boton añadir se añade al carrito
+botones.forEach(boton => {
+    boton.addEventListener('click', function() {
+        let nombreProducto = this.parentElement.querySelector('.nombre-producto').textContent;
+        let precioProducto = parseFloat(this.parentElement.querySelector('.precio-producto').textContent.replace('€', ''));
         if (productosCarrito[nombreProducto]) {
             productosCarrito[nombreProducto].cantidad++;
         } else {
@@ -391,57 +478,60 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // Resetea el borde del contenedor y la lista de productos seleccionados
-        botonesSel.forEach(boton => {
-            boton.parentElement.querySelector('.producto').style.border = '';
-        });
-        productosSeleccionados = [];
-        contenedorProductos.innerHTML = '';
-        let total = 0;
-        for (let producto in productosCarrito) {
-            let cantidad = productosCarrito[producto].cantidad;
-            let precio = productosCarrito[producto].precio;
-            total += cantidad * precio;
-            let elementoProducto = document.createElement('div');
-            elementoProducto.className = 'producto-carrito';
-            elementoProducto.innerHTML = '<span>' + producto + ' x' + cantidad +"  "+ (cantidad * precio) + '€</span>';
-            contenedorProductos.appendChild(elementoProducto);
+        actualizarCarrito();
+    });
+});
+
+function eliminarProducto(nombreProducto) {
+    if (productosCarrito[nombreProducto]) {
+        productosCarrito[nombreProducto].cantidad--;
+
+        if (productosCarrito[nombreProducto].cantidad === 0) {
+            delete productosCarrito[nombreProducto];
         }
 
-        totalCarrito.textContent = 'Total: ' + total + '€';
-    });
+        actualizarCarrito();
+    }
+}
 
-    let botones = document.querySelectorAll('.boton');
+function actualizarCarrito() {
+    contenedorProductos.innerHTML = '';
+    let total = 0;
 
-    //Cuando añades un producto pulsando al boton añadir se añafirá al carrito
-    botones.forEach(boton => {
-        boton.addEventListener('click', function() {
-            let nombreProducto = this.parentElement.querySelector('.nombre-producto').textContent;
-            let precioProducto = parseFloat(this.parentElement.querySelector('.precio-producto').textContent.replace('€', ''));
-            if (productosCarrito[nombreProducto]) {
-                productosCarrito[nombreProducto].cantidad++;
-            } else {
-                productosCarrito[nombreProducto] = {
-                    cantidad: 1,
-                    precio: precioProducto
-                };
-            }
-            
-            contenedorProductos.innerHTML = '';
-            let total = 0;
-            for (let producto in productosCarrito) {
-                let cantidad = productosCarrito[producto].cantidad;
-                let precio = productosCarrito[producto].precio;
-                total += cantidad * precio;
-                let elementoProducto = document.createElement('div');
-                elementoProducto.className = 'producto-carrito';
-                elementoProducto.innerHTML = '<span>' + producto + ' x' + cantidad +"  "+ (cantidad * precio) + '€</span>';
-                contenedorProductos.appendChild(elementoProducto);
-            }
-
-            totalCarrito.textContent = 'Total: ' + total + '€';
+    for (let producto in productosCarrito) {
+        let cantidad = productosCarrito[producto].cantidad;
+        let precio = productosCarrito[producto].precio;
+        total += cantidad * precio;
+    
+        let elementoProducto = document.createElement('div');
+        elementoProducto.className = 'producto-carrito';
+    
+        let nombreProducto = document.createElement('span');
+        nombreProducto.className = 'nombre-producto';
+        nombreProducto.textContent = producto;
+    
+        let cantidadPrecio = document.createElement('span');
+        cantidadPrecio.className = 'cantidad-precio';
+        cantidadPrecio.textContent = ' x' + cantidad + ' ' + (cantidad * precio) + '€';
+    
+        let botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'Eliminar';
+        botonEliminar.className = 'eliminar-producto';
+    
+        botonEliminar.addEventListener('click', function() {
+            eliminarProducto(producto);
         });
-    });
+    
+        elementoProducto.appendChild(nombreProducto);
+        elementoProducto.appendChild(cantidadPrecio);
+        elementoProducto.appendChild(botonEliminar);
+        contenedorProductos.appendChild(elementoProducto);
+    }
+    
+    totalCarrito.textContent = 'Total: ' + total + '€';
+    
+}
+
 });
 
 
@@ -478,10 +568,3 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
-
-
-
-
-
-
-
