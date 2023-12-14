@@ -225,3 +225,14 @@ p{
     }
 }
 
+.label_input {
+    color: var(--color-rojo);
+    font-family: "Secular One";
+    font-size: 25px;
+}
+
+label{
+    color: var(--color-rojo);
+    font-family: "Secular One";
+    font-size: 25px;
+}

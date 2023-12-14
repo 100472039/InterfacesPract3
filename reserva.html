@@ -29,7 +29,7 @@
     </div>
     <input type="checkbox" id="btn-menu-close">
     <div class="navbar">
-        <img src="media/img/VIPS-1.png">
+        <img src="media/img/VIPS-1.png" alt="VIPS">
         <div class="navbar-inner">
             <a href=inicio.html>Inicio</a> 
             <a href="carrito_vips.html">Pedido a domicilio</a>               
@@ -45,17 +45,17 @@
     
     <div class="pagina">
         <div class="col_t1">
-            <p>¿Dónde quieres reservar?</p>
+            <label for="direccion">¿Dónde quieres reservar?</label>
             <input type="text" class="entrada" id="direccion"  placeholder="Introduce direccion o selcciona en el mapa">
-            <p>¿Cuántas personas sois?</p>
+            <label for="numeroPersonas">¿Cuántas personas sois?</label>
             <input type="text" class="entrada" id="numeroPersonas"  placeholder="¿Cuántas personas sois?">
-            <p>¿Qué día quieres reservar?</p>
+            <label>¿Qué día quieres reservar?</label>
             <div class="calendar">
                 <div class="calendar__info">
-                    <div class="calendar__prev" id="prev-month">&#9664;</div>
+                    <div class="calendar__prev" id="prev-month" style="color: #000000;">&#9664;</div>
                     <div class="calendar__month" id="month"></div>
                     <div class="calendar__year" id="year"></div>
-                    <div class="calendar__next" id="next-month">&#9654;</div>
+                    <div class="calendar__next" id="next-month" style="color: #000000;">&#9654;</div>
                 </div>
             
                 <div class="calendar__week">
@@ -70,11 +70,11 @@
             
                 <div class="calendar__dates" id="dates"></div>
             </div>
-            <p>¿A qué hora quieres venir?</p>
+            <label for="hora">¿A qué hora quieres venir?</label>
             <input type="text" class="entrada" id="hora"  placeholder="HH:MM">
         </div>
         <div class="col_t2">
-            <p>¿Quieres encontar tu restaurante más cercano?</p>
+            <label for="boton_cercano">¿Quieres encontrar tu restaurante más cercano?</label>
             <button class = "boton" id="boton_cercano">Mostrar restaurante más cercano</button>
             <div id="mapa"></div>
         </div>
@@ -83,13 +83,13 @@
     <div class="contacto">
         <ul>
             <li>
-                <p>Nombre completo</p>
+                <label for="nombre">Nombre completo</label>
             </li>
             <li>
-                <p>Número de teléfono</p>
+                <label for="telefono">Número de teléfono</label>
             </li>
             <li>
-                <p>Correo electrónico</p>
+                <label for="email">Correo electrónico</label>
             </li>
         </ul>
         <ul>
@@ -110,15 +110,15 @@
             <div>Síguenos</div>
             <div class="imagenes">
                 <a href="https://www.instagram.com/envips/" target="_blank" rel="noopener noreferrer">
-                    <img src="media/img/instagram-1.PNG"/>
+                    <img src="media/img/instagram-1.PNG" alt="instagram"/>
                 </a>
                 <a href="https://www.facebook.com/vips?ref=ts" target="_blank" rel="noopener noreferrer">
-                    <img src="media/img/facebook-1.PNG"/>
+                    <img src="media/img/facebook-1.PNG" alt="facebook"/>
                 </a>
                 <a href="https://twitter.com/vips" target="_blank" rel="noopener noreferrer">
-                    <img src="media/img/twitter.PNG"/>
+                    <img src="media/img/twitter.PNG" alt="twitter"/>
                 </a>
-                <img src="media/img/youtube-1.PNG" />  
+                <img src="media/img/youtube-1.PNG" alt="youtube"/>  
             </div>
         </div>
         <div style="margin-left: auto;">

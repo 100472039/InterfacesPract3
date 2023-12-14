@@ -153,3 +153,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+function inicio(){
+    window.location.href = "inicio.html";
+}
+
+function register(){
+    window.location.href = "register.html";
+}

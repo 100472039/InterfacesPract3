@@ -9,6 +9,7 @@ body {
     --color-blanco: #ffffff;
     --color-shadow: #00000040;
     --color-blanco-sucio: #f9f6ef;
+    --color-texto: #707070;
     --border-radius: 10px;
     min-height: 100vh;
 }
@@ -211,7 +212,7 @@ a {
     width: 100%;
     font-family: 'Optima';
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
 }
 
 .contenedor-titulos{
@@ -287,7 +288,7 @@ a {
 
 .descripcion-producto {
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
     font-family: "Secular One";
 }
 
@@ -441,7 +442,7 @@ a {
 /*Infantil*/
 .descripcion-producto-inf{
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
     font-family: "Secular One";
     justify-content: center;
 }
@@ -536,9 +537,18 @@ a {
 .boton2:active {
     transform: scale(0.9);
 }
+
 main{
     margin-bottom: 150px;
 }
+
+label {
+    font-size: 22px; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--color-rojo); /* Adjust the color as needed */
+}
+
 /* FOOTER */
 .footer {
     width: 100%;

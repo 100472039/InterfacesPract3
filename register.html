@@ -29,7 +29,7 @@
     </div>
     <input type="checkbox" id="btn-menu-close">
     <div class="navbar">
-    <img src="media/img/VIPS-1.png">
+    <img src="media/img/VIPS-1.png" alt="VIPS">
     <div class="navbar-inner">
         <a href="inicio.html">Inicio</a>
         <a href="login.html">Inicio de sesion</a>
@@ -41,21 +41,20 @@
     <section class="centro">
         <h2>Registro de Usuarios</h2>
         <form class="formulario" name="registro" method="get">
-            <label for="dni">DNI:</label>
+            <label for="dni_r">DNI:</label>
                 <input type="text" id="dni_r" name="dni" placeholder="Introduce el DNI."><br>
-            <label for="nombre">Nombre:</label>
+            <label for="nombre_r">Nombre:</label>
                 <input type="text" id="nombre_r" name="nombre" placeholder="Introduce el Nombre."><br>
-            <label for="fecha">Fecha de nacimiento:</label>
+            <label for="fecha_r">Fecha de nacimiento:</label>
                 <input type="text" id="fecha_r" name="fecha" placeholder="Introduce la fecha de nacimiento"><br>
-            <label for="email">Correo electrónico:</label>
+            <label for="email_r">Correo electrónico:</label>
                 <input type="text" id="email_r" name="email" placeholder="Introduce el Correo electrónico."><br>
-            <label for="contrasena">Contraseña:</label>
+            <label for="contrasena_r">Contraseña:</label>
                 <input type="password" id="contrasena_r" name="cpntrasena" placeholder="Introduce la Contraseña."><br>
+            <label for="conf_contrasena_r">Confirmar contraseña:</label>
                 <input type="password" id="conf_contrasena_r" name="conf_contrasena" placeholder="Introduce la Contraseña de nuevo."><br>
-            <input type="button" value="Enviar" class="boton"  onclick="validarRegistro()">
-            <a href="inicio.html">
-                <input type="button" value="Cancelar" class="boton">
-            </a>
+            <input type="button" value="Enviar" class="boton" onclick="validarRegistro()">
+            <input type="button" value="Cancelar" class="boton" onclick="inicio()">
         </form>
     </section>
     <footer class="footer" id="foot">
@@ -63,15 +62,15 @@
           <div>Síguenos</div>
           <div class="imagenes">
               <a href="https://www.instagram.com/envips/" target="_blank" rel="noopener noreferrer">
-                  <img src="media/img/instagram-1.PNG"/>
+                  <img src="media/img/instagram-1.PNG" alt="instagram"/>
               </a>
               <a href="https://www.facebook.com/vips?ref=ts" target="_blank" rel="noopener noreferrer">
-                  <img src="media/img/facebook-1.PNG"/>
+                  <img src="media/img/facebook-1.PNG" alt="facebook"/>
               </a>
               <a href="https://twitter.com/vips" target="_blank" rel="noopener noreferrer">
-                  <img src="media/img/twitter.PNG"/>
+                  <img src="media/img/twitter.PNG" alt="twitter"/>
               </a>
-              <img src="media/img/youtube-1.PNG" />  
+              <img src="media/img/youtube-1.PNG" alt="youtube"/>  
           </div>
       </div>
       <div style="margin-left: auto;">
@@ -80,22 +79,4 @@
       </div>
     </footer>
 </body>
-<!-- <footer class="footer">
-
-    <div>Síguenos</div>
-    <a href="https://www.vips.es/atencion-al-cliente" class="text-wrapper">Atención al cliente</a>  
-
-    <div class="imagenes">
-      <a href="https://www.instagram.com/envips/" target="_blank" rel="noopener noreferrer">
-        <img src="media/img/instagram-1.png"/>
-      </a>
-      <a href="https://www.facebook.com/vips?ref=ts" target="_blank" rel="noopener noreferrer">
-        <img src="media/img/facebook-1.png"/>
-      </a>
-      <a href="https://twitter.com/vips" target="_blank" rel="noopener noreferrer">
-        <img src="media/img/captura-3.png"/>
-      </a>
-      <img src="media/img/youtube-1.png" />  
-    </div>
-  </footer> -->
 </html>
