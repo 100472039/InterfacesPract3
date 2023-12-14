@@ -495,7 +495,8 @@ p{
     margin-bottom: 120px;
 }
 .club label{
-    color: var(--color-blanco)
+    color: var(--color-blanco);
+    margin-right: 5px;
 }
 
 .footer {

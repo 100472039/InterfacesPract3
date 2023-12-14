@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foster's Hollywood Formulario</title>
-    <link href="style_nuevo.css" rel="stylesheet"/>
+    <link href="estilos/index.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
-    <script src="script_usuarios.js"></script>
+    <script src="js/usuarios.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +30,7 @@
       </div>
   </div>
   <div class="navbar">
-    <img src="img/VIPS-1.png">
+    <img src="media/img/VIPS-1.png">
     <div class="navbar-inner">
       <a href="inicio.html">Inicio</a>
       <a href="register.html">Registro de usuarios</a>
@@ -47,12 +47,12 @@
               <input type="text" id="email_l" name="email" placeholder="Introduce el Correo electrónico."><br>
           <label for="contrasena">Contraseña:</label>
               <input type="password" id="contrasena_l" name="cpntrasena" placeholder="Introduce la Contraseña."><br>
-          <input type="button" value="Enviar" style="cursor: pointer;" onclick="validarLogin()">
+          <input type="button" value="Enviar" class="boton" onclick="validarLogin()">
           <a href="inicio.html">
-              <input type="button" value="Cancelar" style="cursor: pointer;">
+              <input type="button" value="Cancelar" class="boton">
           </a>
           <a href="register.html">
-              <input type="button" value="Registrarse" style="cursor: pointer;">
+              <input type="button" value="Registrarse" class="boton">
           </a>
       </form>
     </section>
@@ -61,15 +61,15 @@
         <div>Síguenos</div>
         <div class="imagenes">
             <a href="https://www.instagram.com/envips/" target="_blank" rel="noopener noreferrer">
-                <img src="img/instagram-1.PNG"/>
+                <img src="media/img/instagram-1.PNG"/>
             </a>
             <a href="https://www.facebook.com/vips?ref=ts" target="_blank" rel="noopener noreferrer">
-                <img src="img/facebook-1.PNG"/>
+                <img src="media/img/facebook-1.PNG"/>
             </a>
             <a href="https://twitter.com/vips" target="_blank" rel="noopener noreferrer">
-                <img src="img/twitter.PNG"/>
+                <img src="media/img/twitter.PNG"/>
             </a>
-            <img src="img/youtube-1.PNG" />  
+            <img src="media/img/youtube-1.PNG" />  
         </div>
     </div>
     <div style="margin-left: auto;">

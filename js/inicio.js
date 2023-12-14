@@ -7,31 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         EnviarComen();
     });
 });
-/* window.onload = function() {
-    document.getElementById("realizar_pedido").onclick = function(event) {
-        event.preventDefault(); // Evita la acción predeterminada del enlace
-        if (localStorage.getItem("usuario")) {
-            window.location.href = "carrito_vips.html";
-        } else {
-            window.location.href = "login.html";
-        }
-    }
-} */
 
-/* document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('realizar_pedido').addEventListener('click', function (event) {
-        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
-        let usuario = JSON.parse(localStorage.getItem("usuario"));
-        if (usuario) {
-            console.log("hay usuario");
-            window.location.href = "carrito_vips.html";
-        } else {
-            
-            alert("Debe iniciar sesión para realizar un pedido.")
-            window.location.href = "login.html";
-        }
-    });
-}); */
 document.addEventListener('DOMContentLoaded', function() {
     let promocionesLink = document.querySelector('a[href="#promociones"]');
     promocionesLink.addEventListener('click', function() {
@@ -57,13 +33,20 @@ function EnviarComen(){
 
     mostrarComentarios();
 }
-
+function limpiarCamposRegistro(){
+    document.getElementById("dni_r").value = "";
+    document.getElementById("email_r").value = "";
+    document.getElementById("nombre_r").value = "";
+    document.getElementById("fecha_r").value = "";
+    document.getElementById("contrasena_r").value = "";
+    document.getElementById("conf_contrasena_r").value = "";
+}
 function mostrarComentarios() {
     let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
     let contenedorComentarios = document.getElementById("comentariosGuardados");
     contenedorComentarios.innerHTML = '';
     for (let i = 0; i < comentarios.length; i++) {
-        contenedorComentarios.innerHTML += '<p><img src="img/perfil.png" class="icono-usuario">' + comentarios[i].texto + '<span class="fecha-comentario">' + comentarios[i].fecha + '</span></p>';
+        contenedorComentarios.innerHTML += '<p><img src="media/img/perfil.png" class="icono-usuario">' + comentarios[i].texto + '<span class="fecha-comentario">' + comentarios[i].fecha + '</span></p>';
     }
 }
 

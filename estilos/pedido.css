@@ -536,7 +536,9 @@ a {
 .boton2:active {
     transform: scale(0.9);
 }
-
+main{
+    margin-bottom: 150px;
+}
 /* FOOTER */
 .footer {
     width: 100%;
@@ -548,7 +550,7 @@ a {
     letter-spacing: 0;
     line-height: normal;
     display: flex;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

@@ -80,57 +80,57 @@ function recommendDish() {
         if (Chocolate == "yes") {
             if (Tarta == "yes"){
                 dishName = "Choco&Caramel";
-                dishImageSrc = "img/tartaa.png";
+                dishImageSrc = "media/img/tartaa.png";
             }
             else{
                 dishName = "Tortitas";
-                dishImageSrc = "img/tortitas.png";
+                dishImageSrc = "media/img/tortitas.png";
             }
         } 
         else {
             dishName = "Fundy OClock";
-            dishImageSrc = "img/oclock.png";
+            dishImageSrc = "media/img/oclock.png";
         }
     } else if (HoradeComer == "Comida" || HoradeComer == "Cena") {
         if (Vegetariano=="yes"){
             dishName = "Vegan Burguer";
-            dishImageSrc = "img/VEGAN.jpg";
+            dishImageSrc = "media/img/VEGAN.jpg";
         }
         else{
             if (Hambre == "yes") {
                 if (Hamburguesas == "burgers") {
                     if (BBQ == "yes") {
                         dishName = "Chicken BBQ";
-                        dishImageSrc = "img/BBQ.png";
+                        dishImageSrc = "media/img/BBQ.png";
                     } else {
                         if (Queso == "yes") {
                             dishName = "La Burratisima";
-                            dishImageSrc = "img/BURRATA.png";
+                            dishImageSrc = "media/img/BURRATA.png";
                         } else {
                             dishName = "Vegan Burguer";
-                            dishImageSrc = "img/VEGAN.jpg";
+                            dishImageSrc = "media/img/VEGAN.jpg";
                         }
                     }
                 } else {
                     if (BBQ == "yes") {
                         dishName = "Kentucky";
-                        dishImageSrc = "img/kentucky.jpg";
+                        dishImageSrc = "media/img/kentucky.jpg";
                     } else {
                         if (Queso == "yes") {
                             dishName = "Cubano";
-                        dishImageSrc = "img/cubano.jpg";
+                        dishImageSrc = "media/img/cubano.jpg";
                         } else {
                             if (Pescado=="yes"){
                                 dishName = "Salmon";
-                                dishImageSrc = "img/salmon.png";
+                                dishImageSrc = "media/img/salmon.png";
                             }
                             else{
                                 if (Picante == "yes") {
                                     dishName = "Cacho Power";
-                                    dishImageSrc = "img/cachopower.jpg";
+                                    dishImageSrc = "media/img/cachopower.jpg";
                                 } else {
                                     dishName = "Pastrami";
-                                    dishImageSrc = "img/pastrami.jpg";
+                                    dishImageSrc = "media/img/pastrami.jpg";
                                 }
                             }
                         }
