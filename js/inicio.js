@@ -1,7 +1,3 @@
-function cerrarMenu() {
-    var btnMenu = document.getElementById('btn-menu');
-    btnMenu.checked = false;
-}
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('enviarComentarioButton').addEventListener('click', function () {
         EnviarComen();
@@ -13,7 +9,46 @@ document.addEventListener('DOMContentLoaded', function() {
     promocionesLink.addEventListener('click', function() {
         cerrarMenu();
     });
+
+    document.getElementById('btn-menu-open').addEventListener('click', function() {
+        abrirMenu();
+    });
+
+    document.getElementById('btn-menu-close').addEventListener('click', function() {
+        cerrarMenu();
+    });
 });
+
+function abrirMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 1;
+    containerMenu.style.visibility = 'visible';
+}
+
+function cerrarMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 0;
+    containerMenu.style.visibility = 'hidden';
+
+    var btnMenuOpen = document.getElementById('btn-menu-open');
+    var btnMenuClose = document.getElementById('btn-menu-close');
+    
+    if (btnMenuOpen.checked) {
+        btnMenuOpen.checked = false;
+    }
+    
+    if (btnMenuClose.checked) {
+        btnMenuClose.checked = false;
+    }
+}
+
+/* document.getElementById('btn-menu-open').addEventListener('click', function() {
+    document.getElementById('btn-menu-close').checked = false;
+});
+
+document.getElementById('btn-menu-close').addEventListener('click', function() {
+    document.getElementById('btn-menu-open').checked = false;
+}); */
 function EnviarComen(){
     let comentario = document.getElementById("comentarios").value;
     
@@ -94,21 +129,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         slider.style.transition = "all ease .6s"       
     };  
 
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script ejecutado");
-    
-    console.log(window.location.pathname);
-    if (window.location.pathname == "/reserva_finalizada.html"){
-        console.log("Se cambió la posición del footer.");
-        let footer = document.getElementById('foot');
-        if (footer) {
-            footer.style.position = "fixed";
-           
-        } else {
-            console.error("No se encontró ningún elemento con la clase 'footer'.");
-        }
-        console.log(footer)
-    }
 });

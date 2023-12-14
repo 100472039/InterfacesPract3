@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <link rel="stylesheet" href="estilos/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,30 +9,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200&family=Hahmlet:wght@300&family=Orbitron:wght@500;600&family=Purple+Purse&display=swap" rel="stylesheet">
     <script src="js/inicio.js"></script>
+    <title>VIPS</title>
   </head>
 
   <body>
-    <header>
-      <div class="container">
-          <label for="btn-menu" class="icono-menu"> ☰</label>
-      </div>
-    </header>
-    <input type="checkbox" id="btn-menu">
-    <div class ="container-menu">
-        <div class = "cont-menu">
-            <nav>
-                <a href="#promociones">Promociones</a>
-                <a href=reserva.html>Reservar</a>
-                <a href="carrito_vips.html" id="realizar_pedido">Pedido a domicilio</a>
-                <a href="carta_vips.html">Carta</a>
-                <a href="login.html">Iniciar sesión</a>
-                <a href="register.html">Registro de usuarios</a>
-            </nav>
-            <label for="btn-menu" class="icon-equis">✖️</label>
-        </div>
+    <div class="container">
+      <label for="btn-menu-open" class="icono-menu"> ☰</label>
     </div>
+    <input type="checkbox" id="btn-menu-open">
+    <div class ="container-menu">
+      <div class = "cont-menu">
+        <nav>
+          <a href="#promociones">Promociones</a>
+          <a href=reserva.html>Reservar</a>
+          <a href="carrito_vips.html" id="realizar_pedido">Pedido a domicilio</a>
+          <a href="carta_vips.html">Carta</a>
+          <a href="login.html">Iniciar sesión</a>
+          <a href="register.html">Registro de usuarios</a>
+        </nav>
+        <label for="btn-menu-close" class="icon-equis">✖️</label>
+      </div>
+    </div>
+    <input type="checkbox" id="btn-menu-close">
     <div class="navbar" alt="icono">
-      <img src="media/img/VIPS-1.png" >
+      <img src="media/img/VIPS-1.png" alt="">
       <div class="navbar-inner">
         <a href=#promociones>Promociones</a>
         <a href=reserva.html >Reservar</a>
@@ -144,8 +144,10 @@
             ¡Descárgate la App y disfrutas de una gran variedada de promociones y descuenptos!</p>
           <img src="media/img/Captura2.PNG" alt="foto11">
           <img src="media/img/samsung.png" alt="foto10">
-          <p>Nos importa tu opinión, ¡deja tu comentario!</p>
-          <label for = "comentarios">Comentarios   </label>
+          <!-- <p>Nos importa tu opinión, ¡deja tu comentario!</p> -->
+          <p>
+          <label for = "comentarios">Nos importa tu opinión, ¡deja tu comentario!</label>
+          </p>
           <textarea id="comentarios" name="comentarios" maxlength="100"></textarea>
           <input class="boton-comentario" type="button" value="Enviar" id="enviarComentarioButton">
           

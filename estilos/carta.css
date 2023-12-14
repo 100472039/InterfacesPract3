@@ -9,6 +9,7 @@ body {
     --color-blanco: #ffffff;
     --color-shadow: #00000040;
     --color-blanco-sucio: #f9f6ef;
+    --color-texto: #707070;
     --border-radius: 10px;
     min-height: 100vh;
     display: flex;
@@ -188,7 +189,7 @@ body {
     width: 100%;
     font-family: 'Optima';
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
 }
 
 .contenedor-titulos{
@@ -264,7 +265,7 @@ body {
 
 .descripcion-producto {
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
     font-family: "Secular One";
 }
 
@@ -320,7 +321,7 @@ body {
 /*Infantil*/
 .descripcion-producto-inf{
     font-size: 20px;
-    color: #B1B1B1;
+    color: var(--color-texto);
     font-family: "Secular One";
     justify-content: center;
 }
@@ -428,6 +429,14 @@ body {
     display: block;
 }
 
+#foodForm .texto-pregunta{
+    color: var(--color-texto);
+}
+
+.color-texto{
+    color: var(--color-texto);
+}
+
 #recommendButton{
     display:none;
 }
@@ -453,7 +462,7 @@ body {
   .contact option{
     width: 100%;
     font-size: 15px;
-    color:#B1B1B1;
+    color:var(--color-texto);
   }
 
 .contact select{
