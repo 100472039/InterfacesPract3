@@ -1,3 +1,36 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn-menu-open').addEventListener('click', function() {
+        abrirMenu();
+    });
+
+    document.getElementById('btn-menu-close').addEventListener('click', function() {
+        cerrarMenu();
+    });
+});
+
+function abrirMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 1;
+    containerMenu.style.visibility = 'visible';
+}
+
+function cerrarMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 0;
+    containerMenu.style.visibility = 'hidden';
+
+    var btnMenuOpen = document.getElementById('btn-menu-open');
+    var btnMenuClose = document.getElementById('btn-menu-close');
+    
+    if (btnMenuOpen.checked) {
+        btnMenuOpen.checked = false;
+    }
+    
+    if (btnMenuClose.checked) {
+        btnMenuClose.checked = false;
+    }
+}
+
 // Lista de usuarios
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 

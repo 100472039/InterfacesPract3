@@ -42,13 +42,6 @@ function cerrarMenu() {
     }
 }
 
-/* document.getElementById('btn-menu-open').addEventListener('click', function() {
-    document.getElementById('btn-menu-close').checked = false;
-});
-
-document.getElementById('btn-menu-close').addEventListener('click', function() {
-    document.getElementById('btn-menu-open').checked = false;
-}); */
 function EnviarComen(){
     let comentario = document.getElementById("comentarios").value;
     

@@ -11,34 +11,33 @@
     <script src="js/usuarios.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <label for="btn-menu" class="icono-menu"> ☰</label>
+    <div class="container">
+        <label for="btn-menu-open" class="icono-menu"> ☰</label>
+    </div>
+    <input type="checkbox" id="btn-menu-open">
+    <div class ="container-menu">
+        <div class = "cont-menu">
+            <nav>
+                <a href="inicio.html">Inicio</a>
+                <a href="login.html">Inicio de sesion</a>
+                <a href="carta_vips.html">Carta</a>
+                <a href=reserva.html >Reservar</a>
+                <a href=carrito_vips.html>Pedido a domicilio</a>  
+            </nav>
+            <label for="btn-menu-close" class="icon-equis">✖️</label>
         </div>
-      </header>
-      <input type="checkbox" id="btn-menu">
-      <div class ="container-menu">
-          <div class = "cont-menu">
-              <nav>
-                  <a href="inicio.html">Inicio</a>
-                  <a href="login.html">Inicio de sesion</a>
-                  <a href="carrito_vips.html">Carta</a>
-                  <a href=reserva.html >Reservar</a>
-                  <a href=pedido.html>Pedido a domicilio</a>
-              </nav>
-              <label for="btn-menu" class="icon-equis">✖️</label>
-          </div>
-      </div>
-      <div class="navbar">
-        <img src="media/img/VIPS-1.png">
-        <div class="navbar-inner">
-          <a href="inicio.html">Inicio</a>
-          <a href="login.html">Inicio de sesion</a>
-          <a href="carrito_vips.html">Carta</a>
-          <a href=reserva.html >Reservar</a>
-          <a href=pedido.html>Pedido a domicilio</a>     
-        </div>
-      </div>
+    </div>
+    <input type="checkbox" id="btn-menu-close">
+    <div class="navbar">
+    <img src="media/img/VIPS-1.png">
+    <div class="navbar-inner">
+        <a href="inicio.html">Inicio</a>
+        <a href="login.html">Inicio de sesion</a>
+        <a href="carta_vips.html">Carta</a>
+        <a href=reserva.html >Reservar</a>
+        <a href=carrito_vips.html>Pedido a domicilio</a>     
+    </div>
+    </div>
     <section class="centro">
         <h2>Registro de Usuarios</h2>
         <form class="formulario" name="registro" method="get">

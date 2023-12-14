@@ -64,7 +64,8 @@ body {
     float:right;
 }
 
-#btn-menu{
+#btn-menu-open,
+#btn-menu-close {
     display: none;
 }
 
@@ -79,9 +80,10 @@ body {
     visibility: hidden;
 
 }
-#btn-menu:checked ~ .container-menu{ /*Cuando el checkbox está seleccionado se le pondrá el estilo a la clase container-menu*/
-    opacity: 1;
-    visibility: visible;
+#btn-menu-open:checked ~ .container-menu,
+#btn-menu-close:checked ~ .container-menu{
+    opacity: 0;
+    visibility: hidden;
 }
 .cont-menu{
     width: 100%;
@@ -93,7 +95,18 @@ body {
     transform: translateX(100%);
     right:0;
 }
-#btn-menu:checked ~ .container-menu .cont-menu{ /*Cuando el checkbox está seleccionado se abre el menu*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+#btn-menu-open:checked ~ .container-menu .cont-menu,
+#btn-menu-close:checked ~ .container-menu .cont-menu {
     transform: translateX(0%);
 }
 .cont-menu nav{

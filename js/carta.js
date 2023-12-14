@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn-menu-open').addEventListener('click', function() {
+        abrirMenu();
+    });
+
+    document.getElementById('btn-menu-close').addEventListener('click', function() {
+        cerrarMenu();
+    });
+});
+
+function abrirMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 1;
+    containerMenu.style.visibility = 'visible';
+}
+
+function cerrarMenu() {
+    var containerMenu = document.querySelector('.container-menu');
+    containerMenu.style.opacity = 0;
+    containerMenu.style.visibility = 'hidden';
+
+    var btnMenuOpen = document.getElementById('btn-menu-open');
+    var btnMenuClose = document.getElementById('btn-menu-close');
+    
+    if (btnMenuOpen.checked) {
+        btnMenuOpen.checked = false;
+    }
+    
+    if (btnMenuClose.checked) {
+        btnMenuClose.checked = false;
+    }
+}
 document.addEventListener("DOMContentLoaded", function() {
     var paso1 = document.getElementById('paso1');
     var menu_infantil = document.getElementById('menu_infantil')
