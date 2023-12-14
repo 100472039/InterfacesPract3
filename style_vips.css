@@ -139,6 +139,10 @@ body {
 #alergenos{
     min-height: 70vh;
 }
+
+#alergenossel{
+    width: 13%;
+}
 .contenedor-alergias-sel {
     display: flex;
     justify-content: center;
@@ -456,7 +460,7 @@ a {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    width: 65%;
+    width: 60%;
     position: relative;
 }
 
@@ -476,7 +480,7 @@ a {
 }
 
 #boton-sel{
-    width: 40%;
+    width: 42%;
 }
 
 /*BOTONES*/
@@ -505,7 +509,7 @@ a {
 }
 .boton2 {
     width: 25%;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     font-weight: bold;
     font-size: 1.1rem;
     color: #ffffff;
@@ -515,6 +519,12 @@ a {
     background: var(--color-rojo);
     border-radius: var(--border-radius);
     text-align: center;
+}
+
+#boton-menuanadir{
+    margin-left: 33%;
+    margin-bottom: 4%;
+    margin-top: 3%;
 }
 
 .boton2:hover {
@@ -570,10 +580,17 @@ a {
     .contenedor-descr{
         margin-top: -3%;
     }
+    #boton-menuanadir{
+        margin-left: 30%;
+        margin-bottom: 4%;
+        margin-top: 3%;
+    }
 
     #paso3titulo{
         margin-top:20%;
     }
+    .boton2{
+    width: 35%;}
 
 
     
@@ -590,6 +607,23 @@ a {
 @media only screen and (max-width: 960px) {
     .producto-boton {
         width: 35%;
+    }
+    #comida_titulo{
+        margin-top: 20%;
+    }
+    #titulopago{
+        margin-top: 20%;
+    }
+
+
+    #boton-menuanadir{
+        margin-left: 30%;
+        margin-bottom: 4%;
+        margin-top: 3%;
+    }
+
+    #menuinf_titulo{
+        margin-top: 20%;
     }
 
     #paso3titulo{
@@ -622,18 +656,72 @@ a {
         height:130vh;
 
     }
+    .navbar img {
+        width: 20%;
+    }
 
     .campo-entrada{width: 190%;}
     .contenedor-paso2{margin-left: 25%;}
+    #info-titulo{
+        margin-top: 20%;
+    }
 }
-
+@media only screen and (max-width: 790px) {
+    .producto-boton {
+        width: 30%;
+    }
+}
 
 /*RESPONSIVE*/
 @media only screen and (max-width: 768px) {
     .navbar img {
-        width: 100%;
+        width: 40%;
     }
 
+    #alergenossel{
+        width: 22%;
+    }
+
+    #comida_titulo{
+        margin-top: 25%;
+    }
+    #titulopago{
+        margin-top: 25%;
+    }
+
+
+    #boton-menuanadir{
+        margin-left: 21%;
+        margin-bottom: 4%;
+        margin-top: 3%;
+    }
+
+    .contenedor-titulos{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+    .titulo-apartado{
+        width: 40%;
+        font-size: 24px;
+        font-family: 'Optima';
+        text-align: center;
+        color:#dd1b2d;
+        background-color: #F9F6EF;
+        border: 8px solid #dd1b2d;
+    }
+    
+    .contenedor-menuinf {
+        width: 90%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .contenedor-menuinf img{
+        width: 90%;
+        padding: 0px;
+        margin: 0px;
+    }
     #paso3titulo{
         margin-top:40%;
     }
@@ -658,7 +746,9 @@ a {
         height:140vh;
 
     }
-
+    #boton-sel{
+        width: 55%;
+    }
     .producto-boton {
         width: 50%;
     }
@@ -680,4 +770,35 @@ a {
     }
     #boton-pago3,#boton-pago4{width: 40%;
     margin-left: 25%;}
+    #menuinf_titulo{
+        margin-top: 20%;
+    }
+    #info-titulo{
+        margin-top: 25%;
+    }
+    .navbar-inner{
+        margin-left: 60%;
+    }
+    .navbar-inner a,.navbar-inner label{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 608px) {
+    #comida_titulo{
+        margin-top: 35%;
+    }
+    #titulopago{
+        margin-top: 35%;
+    }
+
+    #menuinf_titulo{
+        margin-top: 35%;
+    }
+    #info-titulo{
+        margin-top: 35%;
+    }
+    .navbar-inner{
+        margin-left: 55%;
+    }
 }

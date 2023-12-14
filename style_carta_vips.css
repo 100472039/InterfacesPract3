@@ -144,6 +144,15 @@ body {
     font-size: 27px;
     color: #dd1b2d;
 }
+.titulovuelta{
+    justify-content: left;
+    font-family: 'Optima';
+    font-size: 27px;
+    color: #dd1b2d;
+    margin-left: 2%;
+    border-bottom: 7px solid #dd1b2d;
+
+}
 
 .contenedor-mp {
     display: flex;
@@ -350,7 +359,7 @@ body {
 }
 
 #boton-sel{
-    width: 40%;
+    width: 50%;
 }
 
 /*BOTONES*/
@@ -531,17 +540,33 @@ body {
     .contenedor-descr{
         margin-top: -3%;
     }
-
+    .producto-kentucky{
+        width:90%;
+    }
+    #boton-sel{
+        width: 50%;
+    }
 
     
     
     #titulo-apartado-inf {
         position: absolute;
         top: 30%;
-        left: 50%;
-        width: 150%;
+        left: 57%;
+        width: 35%;
         transform: translate(-70%, -70%);
         border: 8px solid #dd1b2d;
+    }
+    .navbar-inner{
+        display: none;
+    }
+    .container{
+        display: block;
+        z-index: 2;
+    }
+
+    .navbar{
+        z-index: 1;
     }
 }
 
@@ -549,6 +574,18 @@ body {
     .producto {
         width: 40%;
     }
+    .navbar-inner{
+        display: none;
+    }
+
+    .contenedor-formulario {
+        margin-left: 20%;
+        margin-bottom: 7%;
+        margin-right: 20%;
+    
+      }
+
+
 
     .contenedor-descr{
         width: 100%;
@@ -558,6 +595,10 @@ body {
     #contenedor-postres {
         margin-bottom: 10%;
     }
+    .producto-kentucky{
+        width:87%;
+        margin-left: 3%;
+    }
 }
 
 
@@ -566,6 +607,31 @@ body {
     .producto {
         width: 50%;
     }
+
+    .contenedor-titulos{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+    .producto-kentucky{
+        width:80%;
+    }
+    #paso_menu_titulo{
+        margin-top: 20%;
+    }
+    
+    
+    .titulo-apartado{
+        width: 40%;
+        font-size: 24px;
+        font-family: 'Optima';
+        text-align: center;
+        color:#dd1b2d;
+        background-color: #F9F6EF;
+        border: 8px solid #dd1b2d;
+    }
+    
     .container{
         display: block;
         z-index: 2;
@@ -576,6 +642,7 @@ body {
     .navbar-inner{
         display: none;
     }
+
     .footer {
         flex-direction: column;
         align-items: center;
@@ -586,6 +653,22 @@ body {
         margin-left: 0;
         margin-right: 0;
     }
+    .contenedor-menuinf {
+        width: 90%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .contenedor-menuinf img{
+        width: 90%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .contenedor-formulario {
+        margin-left: 10%;
+        margin-bottom: 7%;
+        margin-right: 10%;
+    
+      }
 
     .producto-boton {
         width: 50%;
@@ -605,5 +688,8 @@ body {
     }
     #contenedor-postres {
         margin-bottom: 16%;
+    }
+    #nuestra_carta{
+        margin-top: 23%;
     }
 }
