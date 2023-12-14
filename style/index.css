@@ -154,6 +154,12 @@ p {
     color: var(--color-blanco);
     font-size: 36px;
 }
+h3 {
+    font: "Hahmlet-Black", "Hahmlet";
+    font-weight: 700;
+    color: var(--color-blanco);
+    font-size: 36px;
+}
 
 .flecha {
     height: 60px;

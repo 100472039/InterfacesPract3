@@ -79,7 +79,7 @@ function mostrarComentarios() {
     let contenedorComentarios = document.getElementById("comentariosGuardados");
     contenedorComentarios.innerHTML = '';
     for (let i = 0; i < comentarios.length; i++) {
-        contenedorComentarios.innerHTML += '<p><img src="media/img/perfil.png" class="icono-usuario">' + comentarios[i].texto + '<span class="fecha-comentario">' + comentarios[i].fecha + '</span></p>';
+        contenedorComentarios.innerHTML += '<p><img src="images/img/perfil.png" class="icono-usuario">' + comentarios[i].texto + '<span class="fecha-comentario">' + comentarios[i].fecha + '</span></p>';
     }
 }
 

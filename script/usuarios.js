@@ -98,7 +98,6 @@ function validarRegistro() {
         email: email,
         fecha: fecha,
         nPedidos: 0,
-        nReservas: 0,
     };
 
     // Añadir usuario a la lista

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let paso3añadirplatos = document.getElementById('boton-pago2');
     let paso3_1confirmar = document.getElementById('boton-pago3');
     let paso3_1añadirplatos = document.getElementById('boton-pago4');
-    let paso3inicio = document.getElementById('boton-inicio');
+/*     let paso3inicio = document.getElementById('boton-inicio'); */
     let alergenossel = document.getElementById('alergenossel');
     let tituloinf = document.getElementById('titulo-apartado-inf');
 
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function() {
     paso3confirmar.addEventListener('click',mostrarPaso3);
     paso3Selector.addEventListener('click',mostrarPaso3);
     paso3añadirplatos.addEventListener('click', mostrarPaso1);
-    paso3inicio.addEventListener('click',mostrarPaso1);
+/*     paso3inicio.addEventListener('click',mostrarPaso1); */
     paso3_1confirmar.addEventListener('click',mostrarPaso3);
     paso3_1añadirplatos.addEventListener('click', mostrarPaso1);
     alergenossel.addEventListener('click',mostrarAlergenos);
